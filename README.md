@@ -13,6 +13,16 @@ The shareable repository is meant to show the research design, build scripts, QA
 - `reports/empirical_summary_report.md`: compact empirical status summary.
 - `trials/energy_shocks/energy_shock_trial_memo.md`: trial-only evidence on oil, gas, and carbon/emissions shock candidates.
 
+## Rendered Report Site
+
+The collaborator-facing HTML bundle lives in `reports/segment_project_space/`. GitHub Pages is configured through `.github/workflows/pages.yml` to publish that directory as a static site when `main` changes.
+
+After Pages is enabled for this repository, the rendered site should be available at:
+
+```text
+https://soyelv.github.io/Project_Thales/
+```
+
 ## Layout
 
 - `data/raw/`: immutable local source files. These are ignored by git.

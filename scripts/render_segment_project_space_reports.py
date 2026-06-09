@@ -114,7 +114,10 @@ def html_table(
             else:
                 cells.append(f"<td>{escape(value)}</td>")
         rows.append("<tr>" + "".join(cells) + "</tr>")
-    return f'<table class="{classes}"><thead><tr>{header}</tr></thead><tbody>{"".join(rows)}</tbody></table>'
+    return (
+        f'<div class="table-wrap"><table class="{classes}">'
+        f'<thead><tr>{header}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
+    )
 
 
 def base_css() -> str:
@@ -133,10 +136,11 @@ def base_css() -> str:
     .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .card, .metric { border: 1px solid #d9ded6; padding: 14px; border-radius: 6px; background: #fbfcfb; }
     .metric strong { display: block; font-size: 20px; margin-top: 4px; }
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     table { width: 100%; border-collapse: collapse; margin: 14px 0 22px; font-size: 13px; }
-    th, td { border-bottom: 1px solid #e2e5df; padding: 8px 9px; text-align: left; vertical-align: top; }
+    th, td { border-bottom: 1px solid #e2e5df; padding: 8px 9px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
     th { background: #f0f2ef; font-weight: 650; }
-    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
     figure { margin: 20px 0 24px; }
     img { max-width: 100%; height: auto; border: 1px solid #e2e5df; border-radius: 6px; background: #fff; }
     figcaption { color: #667085; font-size: 12px; margin-top: 6px; }
@@ -150,7 +154,8 @@ def base_css() -> str:
 
 def nav_html(active: str) -> str:
     links = [
-        ("index", "Start Here", "segment_project_space_report.html"),
+        ("overview", "Overview", "index.html"),
+        ("report", "Start Here", "segment_project_space_report.html"),
         ("guide", "Data Guide", "01_data_guide.html"),
         ("paths", "Workstream Update", "02_research_paths.html"),
         ("appendix", "Evidence Appendix", "03_evidence_appendix.html"),
@@ -176,7 +181,7 @@ def report_shell(title: str, generated_at: str, active: str, body: str) -> str:
   <h1>{escape(title)}</h1>
   <p class="muted">Generated at UTC: {escape(generated_at)}. Source: {escape(DATA_PATH.relative_to(ROOT))}.</p>
   {nav_html(active)}
-  {body}
+{body}
 </main>
 </body>
 </html>
@@ -256,7 +261,7 @@ def render_index_report(
     {html_table(workstreams[["workstream", "current_data_anchor", "unresolved_items"]].head(5))}
   </section>
 """
-    return report_shell("Segment Data Coauthor Briefing: Start Here", generated_at, "index", body)
+    return report_shell("Segment Data Coauthor Briefing: Start Here", generated_at, "report", body)
 
 
 def render_data_guide(
