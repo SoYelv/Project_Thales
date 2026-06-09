@@ -11,12 +11,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 STEPS = [
+    "scripts/build_segment_descriptive_tables.py",
     "scripts/build_segment_project_data_profile.py",
     "scripts/build_segment_project_exposure_profile.py",
     "scripts/build_segment_project_geography_profile.py",
     "scripts/build_segment_project_shock_catalog.py",
     "scripts/build_segment_project_event_readiness.py",
     "scripts/build_segment_project_workstreams.py",
+    "scripts/build_segment_project_regression_profile.py",
     "scripts/build_segment_project_figures.py",
     "scripts/render_segment_project_space_reports.py",
     "scripts/check_segment_project_space_reports.py",

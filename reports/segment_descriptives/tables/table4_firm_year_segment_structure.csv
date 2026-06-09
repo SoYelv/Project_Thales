@@ -1,0 +1,71 @@
+view,stype,variable,plain_english_description,firm_year_units,missing_pct,nonmissing_n,mean,sd,min,p1,p25,p50,p75,p90,p95,p99,max
+latest_source,ALL_STYPES,nonblank_named_segment_rows,Rows with a nonblank segment name,364006,0.0,364006,3.314,3.312,0.0,1.0,1.0,2.0,4.0,7.0,10.0,16.0,67.0
+latest_source,ALL_STYPES,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,364006,0.0,364006,3.819,2.687,0.0,1.0,2.0,3.0,5.0,7.0,9.0,14.0,64.0
+latest_source,ALL_STYPES,positive_sales_segment_rows,Rows with sales greater than zero,364006,0.0,364006,3.418,2.788,0.0,0.0,2.0,2.0,4.0,7.0,9.0,13.0,57.0
+latest_source,ALL_STYPES,reported_segment_rows,All segment rows in a firm-year-stype,364006,0.0,364006,4.158,3.06,1.0,1.0,3.0,3.0,5.0,8.0,10.0,16.0,67.0
+latest_source,ALL_STYPES,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,364006,5.7,343330,0.47,0.193,0.049,0.138,0.363,0.5,0.5,0.61,1.0,1.0,1.0
+latest_source,ALL_STYPES,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,364006,5.7,343330,0.524,0.167,0.086,0.217,0.5,0.5,0.5,0.748,1.0,1.0,1.0
+latest_source,ALL_STYPES,total_positive_sales,Sum of positive segment sales within firm-year-stype,364006,0.0,364006,4430.192,30931.96,0.0,0.0,19.622,166.812,1238.602,6435.569,16437.78,82394.702,8552271.0
+latest_source,BUSSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,352429,0.0,352429,1.912,1.592,0.0,1.0,1.0,1.0,3.0,4.0,5.0,8.0,21.0
+latest_source,BUSSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,352429,0.0,352429,1.683,1.272,0.0,0.0,1.0,1.0,2.0,3.0,4.0,6.0,20.0
+latest_source,BUSSEG,positive_sales_segment_rows,Rows with sales greater than zero,352429,0.0,352429,1.679,1.399,0.0,0.0,1.0,1.0,2.0,4.0,5.0,7.0,21.0
+latest_source,BUSSEG,reported_segment_rows,All segment rows in a firm-year-stype,352429,0.0,352429,1.913,1.592,1.0,1.0,1.0,1.0,3.0,4.0,5.0,8.0,21.0
+latest_source,BUSSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,352429,5.9,331526,0.843,0.244,0.064,0.22,0.662,1.0,1.0,1.0,1.0,1.0,1.0
+latest_source,BUSSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,352429,5.9,331526,0.878,0.201,0.115,0.301,0.79,1.0,1.0,1.0,1.0,1.0,1.0
+latest_source,BUSSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,352429,0.0,352429,1971.884,11555.005,0.0,0.0,9.871,80.482,572.666,2889.0,7219.455,36756.04,945944.661
+latest_source,GEOSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,307470,0.0,307470,1.465,2.365,0.0,0.0,0.0,1.0,2.0,4.0,6.0,10.0,62.0
+latest_source,GEOSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,307470,0.0,307470,2.375,1.86,0.0,1.0,2.0,2.0,2.0,4.0,5.0,10.0,61.0
+latest_source,GEOSEG,positive_sales_segment_rows,Rows with sales greater than zero,307470,0.0,307470,1.905,1.883,0.0,0.0,1.0,1.0,2.0,4.0,5.0,9.0,53.0
+latest_source,GEOSEG,reported_segment_rows,All segment rows in a firm-year-stype,307470,0.0,307470,2.463,1.976,1.0,1.0,2.0,2.0,2.0,4.0,6.0,10.0,62.0
+latest_source,GEOSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,307470,2.7,299076,0.843,0.243,0.055,0.203,0.689,1.0,1.0,1.0,1.0,1.0,1.0
+latest_source,GEOSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,307470,2.7,299076,0.883,0.195,0.107,0.296,0.813,1.0,1.0,1.0,1.0,1.0,1.0
+latest_source,GEOSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,307470,0.0,307470,2364.606,13743.526,0.0,0.0,15.934,108.954,730.821,3567.311,8961.55,43950.126,2202326.0
+latest_source,OPSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,13650,0.0,13650,5.839,2.701,1.0,2.0,4.0,5.0,7.0,9.0,11.0,16.0,29.0
+latest_source,OPSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,13650,0.0,13650,4.741,2.546,1.0,2.0,3.0,4.0,6.0,8.0,10.0,14.0,28.0
+latest_source,OPSEG,positive_sales_segment_rows,Rows with sales greater than zero,13650,0.0,13650,4.729,2.477,0.0,0.0,3.0,4.0,6.0,8.0,9.0,13.0,22.0
+latest_source,OPSEG,reported_segment_rows,All segment rows in a firm-year-stype,13650,0.0,13650,5.839,2.701,1.0,2.0,4.0,5.0,7.0,9.0,11.0,16.0,29.0
+latest_source,OPSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,13650,1.3,13475,0.428,0.206,0.072,0.12,0.275,0.382,0.532,0.735,0.858,1.0,1.0
+latest_source,OPSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,13650,1.3,13475,0.539,0.205,0.118,0.18,0.381,0.508,0.68,0.846,0.924,1.0,1.0
+latest_source,OPSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,13650,0.0,13650,13940.861,97713.398,0.0,0.0,661.715,2568.501,9869.681,28166.6,53296.85,170127.21,8543500.0
+latest_source,STSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,432,0.0,432,5.396,2.193,1.0,2.0,4.0,5.0,6.0,8.0,9.0,13.69,15.0
+latest_source,STSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,432,0.0,432,4.516,2.087,1.0,2.0,3.0,4.0,5.0,7.0,9.0,11.69,14.0
+latest_source,STSEG,positive_sales_segment_rows,Rows with sales greater than zero,432,0.0,432,4.731,2.246,0.0,1.0,3.0,4.0,5.0,8.0,9.0,12.0,14.0
+latest_source,STSEG,reported_segment_rows,All segment rows in a firm-year-stype,432,0.0,432,5.396,2.193,1.0,2.0,4.0,5.0,6.0,8.0,9.0,13.69,15.0
+latest_source,STSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,432,0.9,428,0.39,0.206,0.096,0.11,0.257,0.334,0.461,0.729,0.819,1.0,1.0
+latest_source,STSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,432,0.9,428,0.494,0.21,0.142,0.161,0.348,0.44,0.621,0.838,0.9,1.0,1.0
+latest_source,STSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,432,0.0,432,762.431,912.201,0.0,0.674,144.123,408.496,1030.021,2030.849,2682.925,4164.899,5707.485
+raw_source,ALL_STYPES,nonblank_named_segment_rows,Rows with a nonblank segment name,364006,0.0,364006,6.967,8.552,0.0,1.0,1.0,3.0,9.0,18.0,24.0,38.0,165.0
+raw_source,ALL_STYPES,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,364006,0.0,364006,7.037,7.005,0.0,1.0,3.0,4.0,9.0,15.0,21.0,34.0,157.0
+raw_source,ALL_STYPES,positive_sales_segment_rows,Rows with sales greater than zero,364006,0.0,364006,6.603,7.229,0.0,0.0,2.0,4.0,9.0,15.0,21.0,33.0,154.0
+raw_source,ALL_STYPES,reported_segment_rows,All segment rows in a firm-year-stype,364006,0.0,364006,7.811,8.085,1.0,1.0,3.0,5.0,9.0,18.0,24.0,38.0,165.0
+raw_source,ALL_STYPES,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,364006,5.6,343485,0.32,0.181,0.02,0.055,0.166,0.333,0.5,0.5,0.5,1.0,1.0
+raw_source,ALL_STYPES,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,364006,5.6,343485,0.355,0.179,0.036,0.087,0.167,0.351,0.5,0.5,0.5,1.0,1.0
+raw_source,ALL_STYPES,total_positive_sales,Sum of positive segment sales within firm-year-stype,364006,0.0,364006,10308.898,83619.513,0.0,0.0,27.184,261.786,2260.505,13210.612,35612.392,194795.17,25656813.0
+raw_source,BUSSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,352429,0.0,352429,3.62,3.836,0.0,1.0,1.0,3.0,3.0,9.0,12.0,18.0,36.0
+raw_source,BUSSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,352429,0.0,352429,3.108,2.915,0.0,1.0,1.0,3.0,3.0,6.0,9.0,15.0,31.0
+raw_source,BUSSEG,positive_sales_segment_rows,Rows with sales greater than zero,352429,0.0,352429,3.107,3.192,0.0,0.0,1.0,2.0,3.0,7.0,9.0,15.0,33.0
+raw_source,BUSSEG,reported_segment_rows,All segment rows in a firm-year-stype,352429,0.0,352429,3.621,3.835,1.0,1.0,1.0,3.0,3.0,9.0,12.0,18.0,36.0
+raw_source,BUSSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,352429,5.8,331881,0.596,0.335,0.035,0.098,0.333,0.5,1.0,1.0,1.0,1.0,1.0
+raw_source,BUSSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,352429,5.8,331881,0.62,0.326,0.053,0.13,0.333,0.5,1.0,1.0,1.0,1.0,1.0
+raw_source,BUSSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,352429,0.0,352429,4409.957,28334.397,0.0,0.0,13.638,126.447,1027.6,5706.464,14996.52,82735.404,1890944.661
+raw_source,GEOSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,307470,0.0,307470,3.496,5.906,0.0,0.0,0.0,1.0,4.0,11.0,15.0,26.0,152.0
+raw_source,GEOSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,307470,0.0,307470,4.283,5.056,0.0,1.0,2.0,2.0,4.0,9.0,14.0,24.0,149.0
+raw_source,GEOSEG,positive_sales_segment_rows,Rows with sales greater than zero,307470,0.0,307470,3.758,5.021,0.0,0.0,1.0,2.0,4.0,9.0,13.0,23.0,145.0
+raw_source,GEOSEG,reported_segment_rows,All segment rows in a firm-year-stype,307470,0.0,307470,4.494,5.398,1.0,1.0,2.0,2.0,4.0,11.0,15.0,26.0,152.0
+raw_source,GEOSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,307470,2.6,299592,0.633,0.35,0.019,0.078,0.333,0.601,1.0,1.0,1.0,1.0,1.0
+raw_source,GEOSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,307470,2.6,299592,0.657,0.339,0.036,0.114,0.333,0.741,1.0,1.0,1.0,1.0,1.0
+raw_source,GEOSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,307470,0.0,307470,5620.669,35653.733,0.0,0.0,21.333,165.482,1329.378,7485.43,19849.953,106844.121,4403580.0
+raw_source,OPSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,13650,0.0,13650,13.193,7.366,1.0,2.0,8.0,12.0,18.0,22.0,27.0,36.0,62.0
+raw_source,OPSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,13650,0.0,13650,10.647,6.6,1.0,2.0,6.0,9.0,14.0,18.0,24.0,33.0,59.0
+raw_source,OPSEG,positive_sales_segment_rows,Rows with sales greater than zero,13650,0.0,13650,10.902,6.557,0.0,1.0,6.0,10.0,15.0,19.0,23.0,31.0,53.0
+raw_source,OPSEG,reported_segment_rows,All segment rows in a firm-year-stype,13650,0.0,13650,13.193,7.366,1.0,2.0,8.0,12.0,18.0,22.0,27.0,36.0,62.0
+raw_source,OPSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,13650,0.6,13563,0.226,0.178,0.028,0.049,0.112,0.166,0.273,0.467,0.601,0.951,1.0
+raw_source,OPSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,13650,0.6,13563,0.286,0.197,0.041,0.075,0.153,0.22,0.332,0.574,0.747,0.975,1.0
+raw_source,OPSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,13650,0.0,13650,34386.452,286169.362,0.0,3.767,1374.37,5786.752,22909.65,66930.167,134043.24,433730.88,25630500.0
+raw_source,STSEG,nonblank_named_segment_rows,Rows with a nonblank segment name,432,0.0,432,11.6,6.05,1.0,3.0,7.0,12.0,15.0,18.0,22.0,30.76,39.0
+raw_source,STSEG,operating_candidate_segment_rows,Rows not flagged by corporate/elimination/unallocated name patterns,432,0.0,432,9.725,5.489,1.0,2.0,6.0,9.0,13.0,15.0,19.45,27.0,36.0
+raw_source,STSEG,positive_sales_segment_rows,Rows with sales greater than zero,432,0.0,432,10.308,5.857,0.0,1.0,6.0,10.0,14.25,18.0,21.45,27.0,32.0
+raw_source,STSEG,reported_segment_rows,All segment rows in a firm-year-stype,432,0.0,432,11.6,6.05,1.0,3.0,7.0,12.0,15.0,18.0,22.0,30.76,39.0
+raw_source,STSEG,sales_hhi,HHI of positive segment-sales shares within firm-year-stype,432,0.2,431,0.227,0.198,0.043,0.049,0.103,0.151,0.261,0.46,0.716,0.999,1.0
+raw_source,STSEG,top_segment_sales_share,Largest positive segment-sales share within firm-year-stype,432,0.2,431,0.285,0.215,0.062,0.074,0.141,0.206,0.34,0.593,0.834,1.0,1.0
+raw_source,STSEG,total_positive_sales,Sum of positive segment sales within firm-year-stype,432,0.0,432,1716.888,2157.212,0.0,3.429,286.698,846.456,2140.276,4579.82,6966.203,9181.345,11414.97

@@ -1,0 +1,18 @@
+{
+  "generated_at_utc": "2026-06-09T19:30:28+00:00",
+  "result_tables_present": 3,
+  "result_tables_missing": 0,
+  "compact_result_rows": 84,
+  "summary_rows": 34,
+  "tables_written": [
+    "reports/segment_project_space/tables/segment_project_regression_result_manifest.csv",
+    "reports/segment_project_space/tables/segment_project_regression_outcome_definitions.csv",
+    "reports/segment_project_space/tables/segment_project_regression_specifications.csv",
+    "reports/segment_project_space/tables/segment_project_regression_results_compact.csv",
+    "reports/segment_project_space/tables/segment_project_regression_result_summary.csv"
+  ],
+  "notes": [
+    "Regression profile tables document existing result CSVs; this script does not re-estimate models.",
+    "The reported coefficient is the RSZ allocation-sensitivity interaction, not a treatment effect on investment levels."
+  ]
+}

@@ -8,6 +8,7 @@ Use `../docs/pipeline_map.md` as the main orientation document.
 - `explore_segment_data.py`
 - `build_segment_project_space.py`
 - `explore_segment_project_space.py` (compatibility wrapper for `build_segment_project_space.py`)
+- `build_segment_descriptive_tables.py`
 - `segment_project_common.py`
 - `segment_project_definitions.py`
 - `build_segment_project_data_profile.py`
@@ -16,6 +17,7 @@ Use `../docs/pipeline_map.md` as the main orientation document.
 - `build_segment_project_shock_catalog.py`
 - `build_segment_project_event_readiness.py`
 - `build_segment_project_workstreams.py`
+- `build_segment_project_regression_profile.py`
 - `build_segment_project_figures.py`
 - `render_segment_project_space_reports.py`
 - `check_segment_project_space_reports.py`

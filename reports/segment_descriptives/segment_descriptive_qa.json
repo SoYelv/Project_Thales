@@ -1,0 +1,34 @@
+{
+  "generated_at_utc": "2026-06-09T19:26:41+00:00",
+  "source_path": "data/raw/segment_data.csv",
+  "source_sha256": "fe409fa34ee2c108587716d525814509a24ac9dcbdcf87fd47c3e917db82e5d4",
+  "raw_rows": 2843285,
+  "latest_source_rows": 1513417,
+  "latest_source_dedup_key": [
+    "gvkey",
+    "datadate",
+    "stype",
+    "sid"
+  ],
+  "latest_source_rule": "sort by parsed srcdate within dedup key and keep last row",
+  "outputs": [
+    "reports/segment_descriptives/tables/table1_source_rows_by_segment_type.csv",
+    "reports/segment_descriptives/tables/table2_segments_per_firm_year_distribution.csv",
+    "reports/segment_descriptives/tables/table3_segment_variable_quartiles.csv",
+    "reports/segment_descriptives/tables/table4_firm_year_segment_structure.csv",
+    "reports/segment_descriptives/tables/table5_descriptive_definitions.csv",
+    "reports/segment_descriptives/segment_descriptive_report.md"
+  ],
+  "table_row_counts": {
+    "table1_source_rows_by_segment_type": 5,
+    "table2_segments_per_firm_year_distribution": 40,
+    "table3_segment_variable_quartiles": 390,
+    "table4_firm_year_segment_structure": 70,
+    "table5_descriptive_definitions": 18
+  },
+  "notes": [
+    "The raw file is not mutated.",
+    "The bundle includes both raw-source and latest-source views.",
+    "ALL_STYPES is an inventory view because segment types are overlapping reporting dimensions."
+  ]
+}

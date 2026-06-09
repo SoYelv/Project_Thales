@@ -1,0 +1,6 @@
+stype,raw_rows,latest_source_rows,dropped_older_srcdate_rows,dropped_pct_of_raw,latest_firms,latest_firm_years,latest_min_year,latest_max_year,latest_unique_nonblank_segment_names,latest_source_currencies,raw_firms,raw_firm_years
+ALL_STYPES,2843285,1513417,1329868,46.8,30000,364006,1976,2026,76602,51,30000,364006
+GEOSEG,1381895,757202,624693,45.2,26300,307470,1976,2026,3990,50,26300,307470
+BUSSEG,1276288,674184,602104,47.2,29843,352429,1976,2026,64614,49,29843,352429
+OPSEG,180091,79700,100391,55.7,1544,13650,1996,2026,10187,38,1544,13650
+STSEG,5011,2331,2680,53.5,73,432,1997,2025,295,1,73,432

@@ -17,7 +17,7 @@
     .summary { background: #eef4f1; border-left: 4px solid #3c7d8f; padding: 14px 18px; margin: 20px 0; }
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 24px; }
     .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .card, .metric { border: 1px solid #d9ded6; padding: 14px; border-radius: 6px; background: #fbfcfb; }
+    .card, .metric, .note { border: 1px solid #d9ded6; padding: 14px; border-radius: 6px; background: #fbfcfb; }
     .metric strong { display: block; font-size: 20px; margin-top: 4px; }
     .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     table { width: 100%; border-collapse: collapse; margin: 14px 0 22px; font-size: 13px; }
@@ -37,8 +37,8 @@
 <body>
 <main>
   <h1>Segment Data Coauthor Briefing: Start Here</h1>
-  <p class="muted">Generated at UTC: 2026-06-09T18:17:30+00:00. Source: data/raw/segment_data.csv.</p>
-  <nav class="nav"><a class="" href="index.html">Overview</a><a class="active" href="segment_project_space_report.html">Start Here</a><a class="" href="01_data_guide.html">Data Guide</a><a class="" href="02_research_paths.html">Workstream Update</a><a class="" href="03_evidence_appendix.html">Evidence Appendix</a></nav>
+  <p class="muted">Generated at UTC: 2026-06-09T19:43:19+00:00. Source: data/raw/segment_data.csv.</p>
+  <nav class="nav"><a class="" href="index.html">Overview</a><a class="active" href="segment_project_space_report.html">Start Here</a><a class="" href="01_data_guide.html">Data Guide</a><a class="" href="02_research_paths.html">Workstream Update</a><a class="" href="04_regression_results.html">Regression Results</a><a class="" href="03_evidence_appendix.html">Evidence Appendix</a></nav>
 
   <section>
     <h2>Coauthor Orientation</h2>
@@ -59,7 +59,7 @@
     <div class="grid">
       <div class="card">
         <h3>1. Data Guide</h3>
-        <p>Plain-English variable descriptions, segment types, deduplication, and how coverage is defined.</p>
+        <p>Plain-English variable descriptions, segment types, deduplication, descriptive tables, and how coverage is defined.</p>
         <p><a href="01_data_guide.html">Open the data guide</a></p>
       </div>
       <div class="card">
@@ -68,8 +68,13 @@
         <p><a href="02_research_paths.html">Open the workstream update</a></p>
       </div>
       <div class="card">
-        <h3>3. Evidence Appendix</h3>
-        <p>The detailed tables, charts, current regression evidence, online source table, and mechanical event-window screens.</p>
+        <h3>3. Regression Results</h3>
+        <p>Current RSZ-style regression evidence, outcome construction, treatment/control definitions, and model specification notes.</p>
+        <p><a href="04_regression_results.html">Open the regression tab</a></p>
+      </div>
+      <div class="card">
+        <h3>4. Evidence Appendix</h3>
+        <p>The detailed tables, charts, online source table, geography/name screens, and mechanical event-window screens.</p>
         <p><a href="03_evidence_appendix.html">Open the evidence appendix</a></p>
       </div>
     </div>
@@ -84,7 +89,7 @@
 
   <section>
     <h2>Generated Result Contracts</h2>
-    <p>The HTML pages are rendered from generated CSV, JSON, and PNG artifacts under <code>reports/segment_project_space/</code>. The renderer does not load the raw segment file or recompute coverage.</p>
+    <p>The HTML pages are rendered from generated CSV, JSON, and PNG artifacts under <code>reports/segment_project_space/</code> plus the generated descriptive-statistics bundle under <code>reports/segment_descriptives/</code>. The renderer does not load the raw segment file or recompute coverage.</p>
     <div class="table-wrap"><table class=""><thead><tr><th>workstream</th><th>current_data_anchor</th><th>unresolved_items</th></tr></thead><tbody><tr><td>Candidate shock catalog</td><td>11 source-backed shock types are cataloged, spanning anchor years 1980-2020.</td><td>Each candidate still needs an explicit treatment map if it is used in estimation.</td></tr><tr><td>Early electricity output-producer hedgeability</td><td>1,482 firms; 19,568 firm-years in the electric-power exposure screen.</td><td>HQ-state shock assignment is currently a proxy for operating exposure.</td></tr><tr><td>Electricity input-cost users</td><td>Existing input-intensity files identify high-usage manufacturing and industrial candidates.</td><td>The outcome definition for input-cost users remains to be specified separately from the producer-side RSZ outcome.</td></tr><tr><td>Modern electricity market expansion screens</td><td>Segment data extends through 2026 for the electric-power exposure screen.</td><td>Regional treatment mapping and treated cohort size vary across events.</td></tr><tr><td>Energy commodity producer shocks: WTI and natural gas</td><td>2,808 firms; 31,291 firm-years in the oil/gas and petroleum exposure screen.</td><td>The treatment map and mechanism narrative need to be separated from the electricity-output workstream.</td></tr></tbody></table></div>
   </section>
 

@@ -1,0 +1,19 @@
+term,definition,how_to_read_it
+raw rows,All rows read from data/raw/segment_data.csv before deduplication.,This is the source inventory count.
+latest-source rows,"Rows after keeping the latest srcdate for each gvkey, datadate, stype, sid key.",This is the default denominator for the report series.
+dropped older srcdate rows,"Rows removed because a newer source snapshot exists for the same gvkey, datadate, stype, sid key.",This removes duplicate source snapshots; it is not a research-sample exclusion.
+rows,Segment-level observations in the displayed group after latest-source deduplication.,Used to show raw table scale.
+firms,Distinct gvkey values with at least one row in the displayed group.,Used to show the number of companies represented.
+firm-years,Distinct gvkey and datadate combinations with at least one row in the displayed group.,Used to show panel support for regressions.
+nonmissing pct,Share of rows where a single field is not missing.,Used for variable-level coverage.
+margin-ready pct,Share of rows with sales and ops present and sales not equal to zero.,Used for operating-margin and alpha-style analyses.
+RSZ allocation-ready pct,"Share of rows with sales, ops, capxs, and ias all present.",Used for segment capital-allocation feasibility.
+employment-ready rows,Rows with sales and emps present.,Used for segment labor/resource feasibility.
+R&D-ready rows,Rows with sales and rds present.,Used for segment innovation/resource feasibility.
+geographic FX exposure readiness,GEOSEG rows with sales and a nonblank segment name.,"A screen for possible geography/currency exposure, not a complete causal design."
+event-window readiness,Coverage within mechanical pre/event/post windows around candidate shocks.,A data support screen only; it does not prove identification.
+firm-year-stype,"A gvkey, datadate, and stype combination.","Main unit for segment-count tables because business, geographic, and operating segment tables are overlapping reporting dimensions."
+ALL_STYPES,All segment rows pooled across stype.,Included as an inventory check only. Paper tables should usually keep stype separate unless the design explicitly pools reporting dimensions.
+nonblank segment name,snms after trimming whitespace is not blank.,Used so blank names do not count as named segments.
+operating candidate segment rows,"Rows whose segment name does not match corporate, elimination, unallocated, reconciliation, all-other, or similar nonoperating patterns.",A descriptive screen only. It is not a final sample rule.
+segment sales share,"Positive segment sales divided by positive sales summed within gvkey, datadate, and stype.",Used to summarize concentration and segment size. Undefined when the firm-year-stype has no positive segment sales.

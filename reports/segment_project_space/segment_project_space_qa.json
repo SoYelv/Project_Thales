@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-09T18:17:30+00:00",
+  "generated_at_utc": "2026-06-09T19:43:19+00:00",
   "source_path": "data/raw/segment_data.csv",
   "source_sha256": "fe409fa34ee2c108587716d525814509a24ac9dcbdcf87fd47c3e917db82e5d4",
   "raw_rows": 2843285,
@@ -22,6 +22,11 @@
     "segment_project_key_uniqueness.csv",
     "segment_project_latest_srcdate_dedup_summary.csv",
     "segment_project_name_keyword_readiness.csv",
+    "segment_project_regression_outcome_definitions.csv",
+    "segment_project_regression_result_manifest.csv",
+    "segment_project_regression_result_summary.csv",
+    "segment_project_regression_results_compact.csv",
+    "segment_project_regression_specifications.csv",
     "segment_project_source_metadata.csv",
     "segment_project_stype_summary.csv",
     "segment_project_top_geographic_currencies.csv",
@@ -37,9 +42,11 @@
     "outcome_readiness_by_stype.png"
   ],
   "report_paths": [
+    "reports/segment_project_space/index.html",
     "reports/segment_project_space/segment_project_space_report.html",
     "reports/segment_project_space/01_data_guide.html",
     "reports/segment_project_space/02_research_paths.html",
+    "reports/segment_project_space/04_regression_results.html",
     "reports/segment_project_space/03_evidence_appendix.html"
   ],
   "required_tables_read": [
@@ -65,11 +72,24 @@
     "segment_project_event_family_mapping.csv",
     "segment_project_event_window_readiness.csv",
     "segment_project_workstream_inventory.csv",
-    "segment_project_existing_result_manifest.csv"
+    "segment_project_existing_result_manifest.csv",
+    "segment_project_regression_result_manifest.csv",
+    "segment_project_regression_outcome_definitions.csv",
+    "segment_project_regression_specifications.csv",
+    "segment_project_regression_results_compact.csv",
+    "segment_project_regression_result_summary.csv"
+  ],
+  "descriptive_tables_read": [
+    "reports/segment_descriptives/tables/table1_source_rows_by_segment_type.csv",
+    "reports/segment_descriptives/tables/table2_segments_per_firm_year_distribution.csv",
+    "reports/segment_descriptives/tables/table3_segment_variable_quartiles.csv",
+    "reports/segment_descriptives/tables/table4_firm_year_segment_structure.csv",
+    "reports/segment_descriptives/tables/table5_descriptive_definitions.csv"
   ],
   "notes": [
     "Report renderer reads generated CSV/JSON/PNG artifacts only.",
     "Candidate shocks are source-backed windows, not treatment/control rules.",
-    "Workstream inventory rows are descriptive and do not choose project directions."
+    "Workstream inventory rows are descriptive and do not choose project directions.",
+    "Regression results are documented in a separate tab because they require outcome and model-specification context."
   ]
 }

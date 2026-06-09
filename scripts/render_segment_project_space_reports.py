@@ -15,9 +15,11 @@ from segment_project_common import (
     DATA_PATH,
     FIG_DIR,
     GUIDE_PATH,
+    INDEX_PATH,
     OUT_DIR,
     PATHS_PATH,
     QA_PATH,
+    REGRESSION_PATH,
     REPORT_PATH,
     ROOT,
     TABLE_DIR,
@@ -51,9 +53,15 @@ REQUIRED_TABLES = [
     "segment_project_event_window_readiness.csv",
     "segment_project_workstream_inventory.csv",
     "segment_project_existing_result_manifest.csv",
+    "segment_project_regression_result_manifest.csv",
+    "segment_project_regression_outcome_definitions.csv",
+    "segment_project_regression_specifications.csv",
+    "segment_project_regression_results_compact.csv",
+    "segment_project_regression_result_summary.csv",
 ]
 
 PRIMARY_NUMERIC = ["sales", "ops", "capxs", "ias", "emps", "rds", "ppents"]
+DESCRIPTIVE_TABLE_DIR = ROOT / "reports" / "segment_descriptives" / "tables"
 
 
 def fmt_number(value: object, decimals: int = 1) -> str:
@@ -134,7 +142,7 @@ def base_css() -> str:
     .summary { background: #eef4f1; border-left: 4px solid #3c7d8f; padding: 14px 18px; margin: 20px 0; }
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 24px; }
     .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .card, .metric { border: 1px solid #d9ded6; padding: 14px; border-radius: 6px; background: #fbfcfb; }
+    .card, .metric, .note { border: 1px solid #d9ded6; padding: 14px; border-radius: 6px; background: #fbfcfb; }
     .metric strong { display: block; font-size: 20px; margin-top: 4px; }
     .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     table { width: 100%; border-collapse: collapse; margin: 14px 0 22px; font-size: 13px; }
@@ -158,6 +166,7 @@ def nav_html(active: str) -> str:
         ("report", "Start Here", "segment_project_space_report.html"),
         ("guide", "Data Guide", "01_data_guide.html"),
         ("paths", "Workstream Update", "02_research_paths.html"),
+        ("regression", "Regression Results", "04_regression_results.html"),
         ("appendix", "Evidence Appendix", "03_evidence_appendix.html"),
     ]
     items = []
@@ -202,6 +211,95 @@ def source_meta_value(meta: pd.DataFrame, field: str, default: object = "") -> o
     return meta.iloc[0][field]
 
 
+def read_descriptive_table(name: str) -> pd.DataFrame:
+    path = DESCRIPTIVE_TABLE_DIR / name
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Missing generated descriptive table: {path.relative_to(ROOT)}. "
+            "Run scripts/build_segment_descriptive_tables.py first."
+        )
+    return pd.read_csv(path)
+
+
+def maybe_columns(df: pd.DataFrame, columns: list[str]) -> list[str]:
+    return [col for col in columns if col in df.columns]
+
+
+def render_overview_page(
+    generated_at: str,
+    source_meta: pd.DataFrame,
+    shock_catalog: pd.DataFrame,
+) -> str:
+    raw_rows = int(source_meta_value(source_meta, "raw_rows", 0))
+    dedup_rows = int(source_meta_value(source_meta, "latest_source_rows", 0))
+    source_hash = str(source_meta_value(source_meta, "source_sha256", ""))
+    body = f"""
+  <section>
+    <h2>Coauthor Orientation</h2>
+    <div class="summary">
+      <p><strong>This static report bundle is written for a coauthor joining the project midstream.</strong> It separates data orientation, workstream status, regression evidence, and detailed appendix tables so the reader can enter at the level they need.</p>
+      <p><strong>The report pages are generated from checked tables and figures.</strong> The raw WRDS/Compustat and other licensed inputs are not included in this browsable bundle.</p>
+    </div>
+    <div class="grid four">
+      <div class="metric"><span>Raw rows</span><strong>{raw_rows:,}</strong></div>
+      <div class="metric"><span>Latest-source rows</span><strong>{dedup_rows:,}</strong></div>
+      <div class="metric"><span>Candidate shocks</span><strong>{len(shock_catalog):,}</strong></div>
+      <div class="metric"><span>Source hash</span><strong style="font-size:12px">{escape(source_hash[:12])}</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Open The Report</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Start Here</h3>
+        <p>Main coauthor orientation, current design choices, and links to the rest of the report series.</p>
+        <p><a href="segment_project_space_report.html">Open start page</a></p>
+      </div>
+      <div class="card">
+        <h3>Data Guide</h3>
+        <p>Row definitions, segment types, deduplication, descriptive statistics, variable quartiles, and coverage definitions.</p>
+        <p><a href="01_data_guide.html">Open data guide</a></p>
+      </div>
+      <div class="card">
+        <h3>Workstream Update</h3>
+        <p>Neutral status update on possible research directions, source-backed shock windows, and open design choices.</p>
+        <p><a href="02_research_paths.html">Open update</a></p>
+      </div>
+      <div class="card">
+        <h3>Regression Results</h3>
+        <p>Current RSZ-style regression result tables, outcome construction, treatment definitions, and model specification notes.</p>
+        <p><a href="04_regression_results.html">Open regression tab</a></p>
+      </div>
+      <div class="card">
+        <h3>Evidence Appendix</h3>
+        <p>Detailed coverage tables, shock source rows, geography/name screens, and event-window readiness tables.</p>
+        <p><a href="03_evidence_appendix.html">Open appendix</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Suggested Reading Order</h2>
+    <ol>
+      <li><a href="segment_project_space_report.html">Start Here</a> for the short orientation.</li>
+      <li><a href="01_data_guide.html">Data Guide</a> for what the data contains and the descriptive tables.</li>
+      <li><a href="02_research_paths.html">Workstream Update</a> for project direction and open decisions.</li>
+      <li><a href="04_regression_results.html">Regression Results</a> for model definitions and current result tables.</li>
+      <li><a href="03_evidence_appendix.html">Evidence Appendix</a> when you need source and coverage details behind a claim.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Repository Context</h2>
+    <div class="note">
+      <p>This static site is served from <code>reports/segment_project_space/</code>. The renderer writes standalone HTML, figures, and backing tables; it does not load the raw segment file when the site is viewed.</p>
+    </div>
+  </section>
+"""
+    return report_shell("Project Thales: Segment Data Briefing", generated_at, "overview", body)
+
+
 def render_index_report(
     generated_at: str,
     source_meta: pd.DataFrame,
@@ -232,7 +330,7 @@ def render_index_report(
     <div class="grid">
       <div class="card">
         <h3>1. Data Guide</h3>
-        <p>Plain-English variable descriptions, segment types, deduplication, and how coverage is defined.</p>
+        <p>Plain-English variable descriptions, segment types, deduplication, descriptive tables, and how coverage is defined.</p>
         <p><a href="01_data_guide.html">Open the data guide</a></p>
       </div>
       <div class="card">
@@ -241,8 +339,13 @@ def render_index_report(
         <p><a href="02_research_paths.html">Open the workstream update</a></p>
       </div>
       <div class="card">
-        <h3>3. Evidence Appendix</h3>
-        <p>The detailed tables, charts, current regression evidence, online source table, and mechanical event-window screens.</p>
+        <h3>3. Regression Results</h3>
+        <p>Current RSZ-style regression evidence, outcome construction, treatment/control definitions, and model specification notes.</p>
+        <p><a href="04_regression_results.html">Open the regression tab</a></p>
+      </div>
+      <div class="card">
+        <h3>4. Evidence Appendix</h3>
+        <p>The detailed tables, charts, online source table, geography/name screens, and mechanical event-window screens.</p>
         <p><a href="03_evidence_appendix.html">Open the evidence appendix</a></p>
       </div>
     </div>
@@ -257,7 +360,7 @@ def render_index_report(
 
   <section>
     <h2>Generated Result Contracts</h2>
-    <p>The HTML pages are rendered from generated CSV, JSON, and PNG artifacts under <code>reports/segment_project_space/</code>. The renderer does not load the raw segment file or recompute coverage.</p>
+    <p>The HTML pages are rendered from generated CSV, JSON, and PNG artifacts under <code>reports/segment_project_space/</code> plus the generated descriptive-statistics bundle under <code>reports/segment_descriptives/</code>. The renderer does not load the raw segment file or recompute coverage.</p>
     {html_table(workstreams[["workstream", "current_data_anchor", "unresolved_items"]].head(5))}
   </section>
 """
@@ -273,12 +376,31 @@ def render_data_guide(
     variables: pd.DataFrame,
     var_dict: pd.DataFrame,
     cov_defs: pd.DataFrame,
+    desc_source: pd.DataFrame,
+    desc_segment_counts: pd.DataFrame,
+    desc_variable_quartiles: pd.DataFrame,
+    desc_firmyear_structure: pd.DataFrame,
+    desc_defs: pd.DataFrame,
 ) -> str:
     raw_rows = int(source_meta_value(source_meta, "raw_rows", 0))
     dedup_rows = int(source_meta_value(source_meta, "latest_source_rows", 0))
     primary_cov = variables[variables["variable"].isin(PRIMARY_NUMERIC)].copy().sort_values(["stype", "variable"])
     guide_design = design[
         design["design"].isin(["Segment operating margin", "RSZ capital allocation", "Employment allocation", "R&D allocation", "Geographic FX exposure"])
+    ].copy()
+    latest_counts = desc_segment_counts[
+        desc_segment_counts["view"].eq("latest_source")
+        & desc_segment_counts["measure"].eq("reported_segment_rows")
+    ].copy()
+    selected_quartiles = desc_variable_quartiles[
+        desc_variable_quartiles["view"].eq("latest_source")
+        & desc_variable_quartiles["stype"].isin(["ALL_STYPES", "BUSSEG", "GEOSEG", "OPSEG"])
+        & desc_variable_quartiles["variable"].isin(["sales", "ops", "capxs", "ias", "emps", "rds", "op_margin", "capx_to_assets"])
+    ].copy()
+    selected_structure = desc_firmyear_structure[
+        desc_firmyear_structure["view"].eq("latest_source")
+        & desc_firmyear_structure["stype"].isin(["ALL_STYPES", "BUSSEG", "GEOSEG", "OPSEG"])
+        & desc_firmyear_structure["variable"].isin(["reported_segment_rows", "total_positive_sales", "sales_hhi", "top_segment_sales_share"])
     ].copy()
     body = f"""
   <section>
@@ -298,6 +420,22 @@ def render_data_guide(
     <h2>Segment Types</h2>
     <p>The same variable can have very different coverage by segment type. In the current scripts, <code>BUSSEG</code> is the main source for business-segment performance and allocation outcomes, while <code>GEOSEG</code> is used for geography and disclosure-oriented checks.</p>
     {html_table(stypes, ["stype", "rows", "firms", "firm_years", "min_year", "max_year", "unique_segment_names"])}
+  </section>
+
+  <section>
+    <h2>Table-Style Descriptives From The Original Data</h2>
+    <p>These tables are generated by <code>scripts/build_segment_descriptive_tables.py</code>. The latest-source view is the cleaner default for paper-style descriptive tables because repeated source snapshots are removed; the raw-source view is retained in the standalone descriptive bundle for audit.</p>
+    <p><a href="https://github.com/SoYelv/Project_Thales/blob/main/reports/segment_descriptives/segment_descriptive_report.md">Open the standalone descriptive-statistics memo on GitHub</a></p>
+    <h3>Source rows by segment type</h3>
+    {html_table(desc_source)}
+    <h3>Reported segments per firm-year-stype</h3>
+    {html_table(latest_counts, ["stype", "firm_year_units", "mean", "sd", "p25", "p50", "p75", "p90", "p95", "max", "share_gt1_pct"])}
+    <h3>Selected segment-level variable quartiles</h3>
+    {html_table(selected_quartiles, ["stype", "variable", "segment_rows", "nonmissing_n", "missing_pct", "mean", "sd", "p25", "p50", "p75", "p95"], max_rows=40)}
+    <h3>Selected firm-year segment structure</h3>
+    {html_table(selected_structure, ["stype", "variable", "firm_year_units", "nonmissing_n", "missing_pct", "mean", "sd", "p25", "p50", "p75", "p95"], max_rows=24)}
+    <h3>Additional descriptive definitions</h3>
+    {html_table(desc_defs.tail(5))}
   </section>
 
   <section>
@@ -402,6 +540,103 @@ def render_research_paths(
     return report_shell("Segment Workstream Update", generated_at, "paths", body)
 
 
+def render_regression_results(
+    generated_at: str,
+    result_manifest: pd.DataFrame,
+    outcome_defs: pd.DataFrame,
+    spec_defs: pd.DataFrame,
+    compact_results: pd.DataFrame,
+    result_summary: pd.DataFrame,
+) -> str:
+    early_results = compact_results[compact_results["result_id"].eq("strict_early_electricity")].copy()
+    output_input_results = compact_results[compact_results["result_id"].eq("output_input_electricity")].copy()
+    modern_results = compact_results[compact_results["result_id"].eq("modern_electricity")].copy()
+    key_cols = [
+        "result_id",
+        "design",
+        "shock",
+        "mechanism_group",
+        "sample",
+        "opportunity",
+        "post_lag",
+        "control",
+        "status",
+        "coef",
+        "se",
+        "t",
+        "p",
+        "nobs",
+        "firms_in_estimation",
+        "treated_firms_in_stack",
+        "control_firms_in_stack",
+    ]
+    compact_cols = maybe_columns(compact_results, key_cols)
+    body = f"""
+  <section>
+    <h2>What The Current Regressions Estimate</h2>
+    <div class="summary">
+      <p><strong>The current tables are RSZ-style internal capital-allocation regressions.</strong> The reported coefficient is the interaction between a segment's relative opportunity measure, the treated-firm indicator, and the post-event period. It is not a treatment effect on the level of investment.</p>
+      <p><strong>The outcome is within-firm allocation.</strong> Segment investment intensity is <code>capxs / lagged ias</code>, then demeaned across segments inside the same cohort, firm, and year. This asks whether treated firms allocate relatively more or less investment to high-opportunity segments after the event.</p>
+    </div>
+    <p>Current result rows use two opportunity variables: <code>l_margin</code>, lagged segment operating margin, and <code>sgrow</code>, segment sales growth. Both are converted to within-firm relative opportunity measures before entering the regression.</p>
+  </section>
+
+  <section>
+    <h2>Outcome And Variable Construction</h2>
+    {html_table(outcome_defs)}
+  </section>
+
+  <section>
+    <h2>Regression Specifications</h2>
+    <p>The table below states the design used by each result table. The national-break rows are kept separate because their control group is a period-break screen, not a clean regional not-yet-treated control pool.</p>
+    {html_table(spec_defs)}
+  </section>
+
+  <section>
+    <h2>Model Form</h2>
+    <p>The common estimating equation can be read as:</p>
+    <div class="callout">
+      <p><code>rel_inv[j,f,t,c] = beta * rel_opp[j,f,t,c] x treated[f,c] x post[t,c] + controls/interactions + cohort-segment FE + cohort-year FE + error[j,f,t,c]</code></p>
+    </div>
+    <p><code>beta</code> is the coefficient reported as <code>coef</code> in the result tables. Standard errors are clustered by firm in the current scripts. The estimation sample is restricted to multisegment firm-years after required variables are present; <code>pre_multiseg</code> additionally requires pre-period multisegment status inside the cohort window.</p>
+  </section>
+
+  <section>
+    <h2>Generated Result Manifest</h2>
+    {html_table(result_manifest)}
+  </section>
+
+  <section>
+    <h2>Compact Result Summary</h2>
+    <p>This summary groups the existing result rows by result table, design, mechanism group, and opportunity variable. It is an index into the full rows below.</p>
+    {html_table(result_summary)}
+  </section>
+
+  <section>
+    <h2>Full Current Regression Rows</h2>
+    <h3>Strict early electricity</h3>
+    {html_table(early_results, compact_cols)}
+    <h3>Separated output/input early electricity</h3>
+    {html_table(output_input_results, compact_cols)}
+    <h3>Modern electricity screens</h3>
+    {html_table(modern_results, compact_cols)}
+  </section>
+
+  <section>
+    <h2>How To Read The Result Columns</h2>
+    <ul>
+      <li><code>coef</code>: coefficient on the RSZ allocation-sensitivity interaction.</li>
+      <li><code>opportunity</code>: segment opportunity measure before within-firm demeaning; currently <code>l_margin</code> or <code>sgrow</code>.</li>
+      <li><code>nobs</code>: segment-year observations used by the fitted panel model.</li>
+      <li><code>firms_in_estimation</code>: distinct firms in the fitted stacked sample.</li>
+      <li><code>treated_firms_in_stack</code> and <code>control_firms_in_stack</code>: distinct treated/control firms in the stacked sample when the runner records them.</li>
+      <li><code>status</code>: fit status reported by the runner; <code>ok</code> means the model returned coefficient, standard error, t-statistic, and p-value.</li>
+    </ul>
+  </section>
+"""
+    return report_shell("Segment Regression Results", generated_at, "regression", body)
+
+
 def render_evidence_appendix(
     generated_at: str,
     stypes: pd.DataFrame,
@@ -420,9 +655,6 @@ def render_evidence_appendix(
     shock_sources: pd.DataFrame,
     result_manifest: pd.DataFrame,
 ) -> str:
-    early_results = read_existing_csv(ROOT / "reports" / "tables" / "t1_strict_identification_results.csv")
-    output_input_results = read_existing_csv(ROOT / "reports" / "tables" / "electricity_output_input_rsz_results.csv")
-    modern_results = read_existing_csv(ROOT / "reports" / "tables" / "electricity_output_input_modern_rsz_results.csv")
     important_vars = variables[variables["variable"].isin([*PRIMARY_NUMERIC, "oibdps", "oiadps", "salexg", "intseg", "oelim"])].copy()
     source_display = shock_sources[["shock_id", "source_title", "source_type", "source_claim", "source_url"]].copy()
     body = f"""
@@ -479,15 +711,10 @@ def render_evidence_appendix(
   </section>
 
   <section>
-    <h2>Current Evidence Tables From The Repo</h2>
+    <h2>Regression Table Locations</h2>
+    <p>The regression result tables are now documented in a separate page because they require outcome construction and model-specification context. Use <a href="04_regression_results.html">Regression Results</a> for the model definitions and current coefficients.</p>
     <h3>Existing result manifest</h3>
     {html_table(result_manifest)}
-    <h3>Strict early electricity results</h3>
-    {html_table(early_results)}
-    <h3>Separated output/input RSZ results</h3>
-    {html_table(output_input_results)}
-    <h3>Modern electricity screen</h3>
-    {html_table(modern_results)}
   </section>
 """
     return report_shell("Segment Evidence Appendix", generated_at, "appendix", body)
@@ -495,6 +722,18 @@ def render_evidence_appendix(
 
 def load_generated_tables() -> dict[str, pd.DataFrame]:
     return {name: read_table(name) for name in REQUIRED_TABLES}
+
+
+def load_descriptive_tables() -> dict[str, pd.DataFrame]:
+    return {
+        "table1_source_rows_by_segment_type.csv": read_descriptive_table("table1_source_rows_by_segment_type.csv"),
+        "table2_segments_per_firm_year_distribution.csv": read_descriptive_table(
+            "table2_segments_per_firm_year_distribution.csv"
+        ),
+        "table3_segment_variable_quartiles.csv": read_descriptive_table("table3_segment_variable_quartiles.csv"),
+        "table4_firm_year_segment_structure.csv": read_descriptive_table("table4_firm_year_segment_structure.csv"),
+        "table5_descriptive_definitions.csv": read_descriptive_table("table5_descriptive_definitions.csv"),
+    }
 
 
 def remove_obsolete_artifacts() -> None:
@@ -511,8 +750,14 @@ def main() -> None:
     remove_obsolete_artifacts()
     generated_at = utc_now()
     tables = load_generated_tables()
+    desc_tables = load_descriptive_tables()
 
     reports = {
+        INDEX_PATH: render_overview_page(
+            generated_at=generated_at,
+            source_meta=tables["segment_project_source_metadata.csv"],
+            shock_catalog=tables["segment_project_candidate_shock_catalog.csv"],
+        ),
         REPORT_PATH: render_index_report(
             generated_at=generated_at,
             source_meta=tables["segment_project_source_metadata.csv"],
@@ -529,6 +774,11 @@ def main() -> None:
             variables=tables["segment_project_variable_coverage.csv"],
             var_dict=tables["segment_project_variable_dictionary.csv"],
             cov_defs=tables["segment_project_coverage_definitions.csv"],
+            desc_source=desc_tables["table1_source_rows_by_segment_type.csv"],
+            desc_segment_counts=desc_tables["table2_segments_per_firm_year_distribution.csv"],
+            desc_variable_quartiles=desc_tables["table3_segment_variable_quartiles.csv"],
+            desc_firmyear_structure=desc_tables["table4_firm_year_segment_structure.csv"],
+            desc_defs=desc_tables["table5_descriptive_definitions.csv"],
         ),
         PATHS_PATH: render_research_paths(
             generated_at=generated_at,
@@ -538,6 +788,14 @@ def main() -> None:
             shock_catalog=tables["segment_project_candidate_shock_catalog.csv"],
             shock_type_summary=tables["segment_project_candidate_shock_type_summary.csv"],
             events=tables["segment_project_event_window_readiness.csv"],
+        ),
+        REGRESSION_PATH: render_regression_results(
+            generated_at=generated_at,
+            result_manifest=tables["segment_project_regression_result_manifest.csv"],
+            outcome_defs=tables["segment_project_regression_outcome_definitions.csv"],
+            spec_defs=tables["segment_project_regression_specifications.csv"],
+            compact_results=tables["segment_project_regression_results_compact.csv"],
+            result_summary=tables["segment_project_regression_result_summary.csv"],
         ),
         APPENDIX_PATH: render_evidence_appendix(
             generated_at=generated_at,
@@ -572,10 +830,12 @@ def main() -> None:
         "figures_written": sorted(p.name for p in FIG_DIR.glob("*.png")),
         "report_paths": [str(path.relative_to(ROOT)) for path in reports],
         "required_tables_read": REQUIRED_TABLES,
+        "descriptive_tables_read": [str((DESCRIPTIVE_TABLE_DIR / name).relative_to(ROOT)) for name in desc_tables],
         "notes": [
             "Report renderer reads generated CSV/JSON/PNG artifacts only.",
             "Candidate shocks are source-backed windows, not treatment/control rules.",
             "Workstream inventory rows are descriptive and do not choose project directions.",
+            "Regression results are documented in a separate tab because they require outcome and model-specification context.",
         ],
     }
     QA_PATH.write_text(json.dumps(qa, indent=2), encoding="utf-8")

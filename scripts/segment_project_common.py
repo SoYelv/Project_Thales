@@ -23,9 +23,11 @@ OUT_DIR = ROOT / "reports" / "segment_project_space"
 TABLE_DIR = OUT_DIR / "tables"
 FIG_DIR = OUT_DIR / "figures"
 REPORT_PATH = OUT_DIR / "segment_project_space_report.html"
+INDEX_PATH = OUT_DIR / "index.html"
 GUIDE_PATH = OUT_DIR / "01_data_guide.html"
 PATHS_PATH = OUT_DIR / "02_research_paths.html"
 APPENDIX_PATH = OUT_DIR / "03_evidence_appendix.html"
+REGRESSION_PATH = OUT_DIR / "04_regression_results.html"
 QA_PATH = OUT_DIR / "segment_project_space_qa.json"
 
 USECOLS = [

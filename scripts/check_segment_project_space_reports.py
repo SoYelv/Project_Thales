@@ -25,10 +25,12 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORT_DIR = ROOT / "reports" / "segment_project_space"
 
 EXPECTED_REPORT_FILES = [
+    "index.html",
     "segment_project_space_report.html",
     "01_data_guide.html",
     "02_research_paths.html",
     "03_evidence_appendix.html",
+    "04_regression_results.html",
     "segment_project_space_qa.json",
 ]
 

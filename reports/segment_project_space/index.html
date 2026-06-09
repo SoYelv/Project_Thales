@@ -5,200 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Project Thales: Segment Data Briefing</title>
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #1f2933;
-      --muted: #667085;
-      --paper: #ffffff;
-      --page: #f6f7f5;
-      --line: #d9ded6;
-      --soft: #eef4f1;
-      --accent: #245d6b;
-      --accent-2: #6b4f24;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--page);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    main {
-      max-width: 1120px;
-      min-height: 100vh;
-      margin: 0 auto;
-      padding: 36px 28px 64px;
-      background: var(--paper);
-    }
-    h1 {
-      margin: 0 0 10px;
-      font-size: 32px;
-      line-height: 1.15;
-      letter-spacing: 0;
-    }
-    h2 {
-      margin-top: 32px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      font-size: 21px;
-      letter-spacing: 0;
-    }
-    h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-      letter-spacing: 0;
-    }
-    p, li {
-      font-size: 15px;
-      line-height: 1.5;
-    }
-    a {
-      color: var(--accent);
-    }
-    code {
-      padding: 1px 4px;
-      border-radius: 3px;
-      background: #eef1ed;
-    }
-    .muted {
-      color: var(--muted);
-    }
-    .summary {
-      margin: 20px 0;
-      padding: 14px 18px;
-      border-left: 4px solid #3c7d8f;
-      background: var(--soft);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin: 18px 0 24px;
-    }
-    .card, .metric, .note {
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: #fbfcfb;
-    }
-    .card {
-      display: flex;
-      min-height: 178px;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 16px;
-    }
-    .card p {
-      margin: 0 0 14px;
-    }
-    .card a {
-      display: inline-block;
-      font-weight: 650;
-      text-decoration: none;
-    }
-    .metric {
-      padding: 14px;
-    }
-    .metric strong {
-      display: block;
-      margin-top: 4px;
-      font-size: 20px;
-      line-height: 1.2;
-    }
-    .note {
-      padding: 14px 16px;
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 18px 0 24px;
-    }
-    .nav a {
-      padding: 7px 10px;
-      border: 1px solid #cad2c7;
-      border-radius: 4px;
-      background: #fff;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    .nav a.active {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #fff;
-    }
-    .toc {
-      margin: 0;
-      padding-left: 20px;
-    }
-    .toc li {
-      margin: 8px 0;
-    }
-    @media (max-width: 920px) {
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 640px) {
-      main { padding: 24px 16px 48px; }
-      h1 { font-size: 27px; }
-      .grid { grid-template-columns: 1fr; }
-      .card { min-height: 0; }
-    }
-  </style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; color: #1f2933; background: #f6f7f5; }
+    main { max-width: 1120px; margin: 0 auto; padding: 34px 28px 64px; background: #fff; }
+    h1 { font-size: 30px; margin: 0 0 10px; letter-spacing: 0; }
+    h2 { font-size: 21px; margin-top: 32px; border-top: 1px solid #d9ded6; padding-top: 22px; }
+    h3 { font-size: 17px; margin-top: 22px; }
+    p, li { line-height: 1.5; font-size: 15px; }
+    a { color: #245d6b; }
+    code { background: #eef1ed; padding: 1px 4px; border-radius: 3px; }
+    .muted { color: #667085; }
+    .summary { background: #eef4f1; border-left: 4px solid #3c7d8f; padding: 14px 18px; margin: 20px 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 24px; }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card, .metric, .note { border: 1px solid #d9ded6; padding: 14px; border-radius: 6px; background: #fbfcfb; }
+    .metric strong { display: block; font-size: 20px; margin-top: 4px; }
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0 22px; font-size: 13px; }
+    th, td { border-bottom: 1px solid #e2e5df; padding: 8px 9px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { background: #f0f2ef; font-weight: 650; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    figure { margin: 20px 0 24px; }
+    img { max-width: 100%; height: auto; border: 1px solid #e2e5df; border-radius: 6px; background: #fff; }
+    figcaption { color: #667085; font-size: 12px; margin-top: 6px; }
+    .callout { border: 1px solid #d9ded6; border-radius: 6px; padding: 14px 16px; background: #fbfcfb; }
+    .nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+    .nav a { border: 1px solid #cad2c7; border-radius: 4px; padding: 7px 10px; text-decoration: none; background: #fff; font-size: 14px; }
+    .nav a.active { background: #245d6b; border-color: #245d6b; color: #fff; }
+    @media (max-width: 820px) { .grid, .grid.four { grid-template-columns: 1fr; } main { padding: 24px 16px 48px; } }
+    </style>
 </head>
 <body>
 <main>
   <h1>Project Thales: Segment Data Briefing</h1>
-  <p class="muted">Rendered collaborator view for the segment-data electricity and derivatives project.</p>
-
-  <nav class="nav">
-    <a class="active" href="index.html">Overview</a>
-    <a href="segment_project_space_report.html">Start Here</a>
-    <a href="01_data_guide.html">Data Guide</a>
-    <a href="02_research_paths.html">Workstream Update</a>
-    <a href="03_evidence_appendix.html">Evidence Appendix</a>
-  </nav>
-
-  <section class="summary">
-    <p><strong>Start with the briefing index if you only have a few minutes.</strong> It explains what the segment data contains, what the current workstreams are, and which shock candidates have enough source-backed support to discuss.</p>
-    <p><strong>Raw WRDS/Compustat and Revelio inputs are not included.</strong> The pages here are rendered from small checked-in CSV, JSON, and PNG artifacts so collaborators can review the evidence without local data access.</p>
-  </section>
+  <p class="muted">Generated at UTC: 2026-06-09T19:43:19+00:00. Source: data/raw/segment_data.csv.</p>
+  <nav class="nav"><a class="active" href="index.html">Overview</a><a class="" href="segment_project_space_report.html">Start Here</a><a class="" href="01_data_guide.html">Data Guide</a><a class="" href="02_research_paths.html">Workstream Update</a><a class="" href="04_regression_results.html">Regression Results</a><a class="" href="03_evidence_appendix.html">Evidence Appendix</a></nav>
 
   <section>
-    <h2>Open The Report</h2>
-    <div class="grid">
-      <article class="card">
-        <div>
-          <h3>Start Here</h3>
-          <p>Main coauthor orientation, headline data scale, current design choices, and links to the rest of the report series.</p>
-        </div>
-        <a href="segment_project_space_report.html">Open start page</a>
-      </article>
-      <article class="card">
-        <div>
-          <h3>Data Guide</h3>
-          <p>Plain-English row definitions, segment types, deduplication rules, variable coverage, and readiness definitions.</p>
-        </div>
-        <a href="01_data_guide.html">Open data guide</a>
-      </article>
-      <article class="card">
-        <div>
-          <h3>Workstream Update</h3>
-          <p>Neutral status update on possible research directions, shock windows, data anchors, and open design choices.</p>
-        </div>
-        <a href="02_research_paths.html">Open update</a>
-      </article>
-      <article class="card">
-        <div>
-          <h3>Evidence Appendix</h3>
-          <p>Detailed tables, charts, online source table, existing regression evidence, and mechanical event-window screens.</p>
-        </div>
-        <a href="03_evidence_appendix.html">Open appendix</a>
-      </article>
+    <h2>Coauthor Orientation</h2>
+    <div class="summary">
+      <p><strong>This static report bundle is written for a coauthor joining the project midstream.</strong> It separates data orientation, workstream status, regression evidence, and detailed appendix tables so the reader can enter at the level they need.</p>
+      <p><strong>The report pages are generated from checked tables and figures.</strong> The raw WRDS/Compustat and other licensed inputs are not included in this browsable bundle.</p>
     </div>
-  </section>
-
-  <section>
-    <h2>Snapshot</h2>
-    <div class="grid">
+    <div class="grid four">
       <div class="metric"><span>Raw rows</span><strong>2,843,285</strong></div>
       <div class="metric"><span>Latest-source rows</span><strong>1,513,417</strong></div>
       <div class="metric"><span>Candidate shocks</span><strong>27</strong></div>
@@ -207,12 +55,44 @@
   </section>
 
   <section>
+    <h2>Open The Report</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Start Here</h3>
+        <p>Main coauthor orientation, current design choices, and links to the rest of the report series.</p>
+        <p><a href="segment_project_space_report.html">Open start page</a></p>
+      </div>
+      <div class="card">
+        <h3>Data Guide</h3>
+        <p>Row definitions, segment types, deduplication, descriptive statistics, variable quartiles, and coverage definitions.</p>
+        <p><a href="01_data_guide.html">Open data guide</a></p>
+      </div>
+      <div class="card">
+        <h3>Workstream Update</h3>
+        <p>Neutral status update on possible research directions, source-backed shock windows, and open design choices.</p>
+        <p><a href="02_research_paths.html">Open update</a></p>
+      </div>
+      <div class="card">
+        <h3>Regression Results</h3>
+        <p>Current RSZ-style regression result tables, outcome construction, treatment definitions, and model specification notes.</p>
+        <p><a href="04_regression_results.html">Open regression tab</a></p>
+      </div>
+      <div class="card">
+        <h3>Evidence Appendix</h3>
+        <p>Detailed coverage tables, shock source rows, geography/name screens, and event-window readiness tables.</p>
+        <p><a href="03_evidence_appendix.html">Open appendix</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Suggested Reading Order</h2>
-    <ol class="toc">
+    <ol>
       <li><a href="segment_project_space_report.html">Start Here</a> for the short orientation.</li>
-      <li><a href="01_data_guide.html">Data Guide</a> for the accounting and coverage definitions.</li>
+      <li><a href="01_data_guide.html">Data Guide</a> for what the data contains and the descriptive tables.</li>
       <li><a href="02_research_paths.html">Workstream Update</a> for project direction and open decisions.</li>
-      <li><a href="03_evidence_appendix.html">Evidence Appendix</a> when you need the tables behind a claim.</li>
+      <li><a href="04_regression_results.html">Regression Results</a> for model definitions and current result tables.</li>
+      <li><a href="03_evidence_appendix.html">Evidence Appendix</a> when you need source and coverage details behind a claim.</li>
     </ol>
   </section>
 
@@ -222,6 +102,7 @@
       <p>This static site is served from <code>reports/segment_project_space/</code>. The renderer writes standalone HTML, figures, and backing tables; it does not load the raw segment file when the site is viewed.</p>
     </div>
   </section>
+
 </main>
 </body>
 </html>
