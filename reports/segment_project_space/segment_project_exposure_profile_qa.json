@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-06-09T15:00:02+00:00",
+  "latest_srcdate_rows": 1513417,
+  "exposure_families": [
+    "electric_power_output",
+    "gas_utility",
+    "oil_gas_petroleum",
+    "broader_energy",
+    "metals_mining",
+    "agriculture_food",
+    "transport_freight",
+    "airlines_fuel_sensitive",
+    "chemicals",
+    "paper_pulp",
+    "cement_minerals"
+  ],
+  "tables_written": [
+    "reports/segment_project_space/tables/segment_project_exposure_definitions.csv",
+    "reports/segment_project_space/tables/segment_project_exposure_family_readiness.csv",
+    "reports/segment_project_space/tables/segment_project_name_keyword_readiness.csv"
+  ],
+  "notes": [
+    "Exposure fields are current screening proxies for coverage exploration.",
+    "seg_sic is first nonmissing sics1, sics2, then firm-level sic."
+  ]
+}

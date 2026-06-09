@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-06-09T15:00:40+00:00",
+  "latest_srcdate_rows": 1513417,
+  "geoseg_rows": 757202,
+  "tables_written": [
+    "reports/segment_project_space/tables/segment_project_geography_decade_readiness.csv",
+    "reports/segment_project_space/tables/segment_project_top_geographic_names.csv",
+    "reports/segment_project_space/tables/segment_project_top_geographic_currencies.csv"
+  ],
+  "notes": [
+    "Blank GEOSEG names are labeled [missing segment name].",
+    "Geographic readiness is a disclosure screen, not a treatment assignment."
+  ]
+}

@@ -1,0 +1,6 @@
+result_id,description,path,status,rows,columns
+strict_early_electricity,Early electricity producer-side result table,reports/tables/t1_strict_identification_results.csv,present,4,mapping; control; window; sample; opportunity; coef; se; t; p; nobs; firms
+output_input_electricity,Separated output/input electricity result table,reports/tables/electricity_output_input_rsz_results.csv,present,16,mechanism_group; sample; opportunity; coef; se; t; p; nobs; firms_in_estimation; treated_firms_in_stack; control_firms_in_stack; status
+modern_electricity,Modern electricity screen result table,reports/tables/electricity_output_input_modern_rsz_results.csv,present,64,design; shock; mechanism_group; sample; opportunity; post_lag; control; status; coef; se; t; p; nobs; firms_in_estimation; treated_firms_in_stack; control_firms_in_stack
+electricity_group_counts,Output/input mechanism group counts,reports/tables/electricity_output_input_group_counts.csv,present,16,mechanism_group; event_year; region; role; firms; firms_with_any_multiseg_year
+modern_electricity_group_counts,Modern mechanism group counts,reports/tables/electricity_output_input_modern_group_counts.csv,present,38,design; mechanism_group; event_year; region; role; firms; firms_with_any_multiseg_year

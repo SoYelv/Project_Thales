@@ -1,0 +1,23 @@
+{
+  "generated_at_utc": "2026-06-09T14:58:56+00:00",
+  "source_path": "data/raw/segment_data.csv",
+  "source_sha256": "fe409fa34ee2c108587716d525814509a24ac9dcbdcf87fd47c3e917db82e5d4",
+  "raw_rows": 2843285,
+  "latest_srcdate_rows": 1513417,
+  "tables_written": [
+    "reports/segment_project_space/tables/segment_project_source_metadata.csv",
+    "reports/segment_project_space/tables/segment_project_latest_srcdate_dedup_summary.csv",
+    "reports/segment_project_space/tables/segment_project_stype_summary.csv",
+    "reports/segment_project_space/tables/segment_project_design_readiness.csv",
+    "reports/segment_project_space/tables/segment_project_variable_coverage.csv",
+    "reports/segment_project_space/tables/segment_project_code_coverage.csv",
+    "reports/segment_project_space/tables/segment_project_decade_readiness.csv",
+    "reports/segment_project_space/tables/segment_project_key_uniqueness.csv",
+    "reports/segment_project_space/tables/segment_project_variable_dictionary.csv",
+    "reports/segment_project_space/tables/segment_project_coverage_definitions.csv"
+  ],
+  "notes": [
+    "Raw segment file is read-only and not mutated.",
+    "Latest-source-date deduplication keeps one row per gvkey, datadate, stype, sid key."
+  ]
+}

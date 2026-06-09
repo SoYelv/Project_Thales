@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local raw/licensed inputs. Keep the manifest, not bulky source extracts, in git.
+data/raw/
+
+# Generated analysis outputs.
+reports/panel/
+reports/tables/*.csv

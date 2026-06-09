@@ -1,0 +1,82 @@
+shock_id,shock_type,shock_family,candidate_window,event_anchor_year,exposure_families,window,start_year,end_year,rows,firms,firm_years,margin_ready_pct,allocation_ready_pct
+pjm_capacity_rpm_2007,capacity market design,PJM Reliability Pricing Model capacity market,2007,2007,electric_power_output,pre_10y,1997,2006,8958,760,4357,66.4,60.3
+pjm_capacity_rpm_2007,capacity market design,PJM Reliability Pricing Model capacity market,2007,2007,electric_power_output,event_pm5y,2002,2012,10751,701,5068,62.6,56.9
+pjm_capacity_rpm_2007,capacity market design,PJM Reliability Pricing Model capacity market,2007,2007,electric_power_output,post_10y,2008,2017,9350,635,4357,65.0,58.4
+petroleum_futures_institutionalization_1981_1986,commodity derivative availability,Petroleum market opening and crude futures,1981-1986,1983,oil_gas_petroleum; airlines_fuel_sensitive; transport_freight; chemicals,pre_10y,1973,1982,11875,1887,8260,96.3,85.9
+petroleum_futures_institutionalization_1981_1986,commodity derivative availability,Petroleum market opening and crude futures,1981-1986,1983,oil_gas_petroleum; airlines_fuel_sensitive; transport_freight; chemicals,event_pm5y,1978,1988,21135,2642,15561,98.0,94.2
+petroleum_futures_institutionalization_1981_1986,commodity derivative availability,Petroleum market opening and crude futures,1981-1986,1983,oil_gas_petroleum; airlines_fuel_sensitive; transport_freight; chemicals,post_10y,1984,1993,18986,2715,14770,96.7,94.4
+refined_products_hedgeability_1978_1994,commodity derivative availability,Refined petroleum product futures and spreads,1978-1994,1984,oil_gas_petroleum; airlines_fuel_sensitive; transport_freight; chemicals,pre_10y,1974,1983,13955,2004,9766,96.6,87.2
+refined_products_hedgeability_1978_1994,commodity derivative availability,Refined petroleum product futures and spreads,1978-1994,1984,oil_gas_petroleum; airlines_fuel_sensitive; transport_freight; chemicals,event_pm5y,1979,1989,21228,2693,15771,97.9,94.3
+refined_products_hedgeability_1978_1994,commodity derivative availability,Refined petroleum product futures and spreads,1978-1994,1984,oil_gas_petroleum; airlines_fuel_sensitive; transport_freight; chemicals,post_10y,1985,1994,18934,2659,14829,96.4,94.3
+ag_options_and_extensions_1984_2011,commodity derivative availability,Agriculture/food options and contract extensions,1984-2011,1985,agriculture_food,pre_10y,1975,1984,3521,450,2486,94.9,80.6
+ag_options_and_extensions_1984_2011,commodity derivative availability,Agriculture/food options and contract extensions,1984-2011,1985,agriculture_food,event_pm5y,1980,1990,3787,543,2958,98.5,93.0
+ag_options_and_extensions_1984_2011,commodity derivative availability,Agriculture/food options and contract extensions,1984-2011,1985,agriculture_food,post_10y,1986,1995,3196,514,2651,97.7,93.5
+metals_contract_availability_1982_1990,commodity derivative availability,Metals futures/options availability,1982-1990,1988,metals_mining,pre_10y,1978,1987,11597,1651,8812,95.3,94.2
+metals_contract_availability_1982_1990,commodity derivative availability,Metals futures/options availability,1982-1990,1988,metals_mining,event_pm5y,1983,1993,11977,1721,9658,91.8,94.0
+metals_contract_availability_1982_1990,commodity derivative availability,Metals futures/options availability,1982-1990,1988,metals_mining,post_10y,1989,1998,9932,1339,7966,89.6,91.5
+natural_gas_market_liberalization_1990_1993,commodity derivative availability,Natural gas futures and pipeline unbundling,1990-1993,1990,oil_gas_petroleum; gas_utility; electric_power_output; chemicals; cement_minerals,pre_10y,1980,1989,21189,2684,15373,97.4,95.1
+natural_gas_market_liberalization_1990_1993,commodity derivative availability,Natural gas futures and pipeline unbundling,1990-1993,1990,oil_gas_petroleum; gas_utility; electric_power_output; chemicals; cement_minerals,event_pm5y,1985,1995,22844,2928,17286,95.8,94.7
+natural_gas_market_liberalization_1990_1993,commodity derivative availability,Natural gas futures and pipeline unbundling,1990-1993,1990,oil_gas_petroleum; gas_utility; electric_power_output; chemicals; cement_minerals,post_10y,1991,2000,25166,2911,16941,86.4,83.3
+california_carbon_2011,environmental/compliance market,California carbon allowances,2011,2011,electric_power_output; cement_minerals; chemicals; paper_pulp; metals_mining,pre_10y,2001,2010,42140,3260,20305,62.8,64.2
+california_carbon_2011,environmental/compliance market,California carbon allowances,2011,2011,electric_power_output; cement_minerals; chemicals; paper_pulp; metals_mining,event_pm5y,2006,2016,45995,3653,22812,62.5,64.5
+california_carbon_2011,environmental/compliance market,California carbon allowances,2011,2011,electric_power_output; cement_minerals; chemicals; paper_pulp; metals_mining,post_10y,2012,2021,40340,3472,21087,62.7,64.5
+rin_credit_hedgeability_2010_2013,environmental/compliance market,Renewable Identification Number credits,2010-2013,2013,oil_gas_petroleum; agriculture_food,pre_10y,2003,2012,15878,1369,8185,66.1,62.5
+rin_credit_hedgeability_2010_2013,environmental/compliance market,Renewable Identification Number credits,2010-2013,2013,oil_gas_petroleum; agriculture_food,event_pm5y,2008,2018,17170,1291,8779,65.9,59.6
+rin_credit_hedgeability_2010_2013,environmental/compliance market,Renewable Identification Number credits,2010-2013,2013,oil_gas_petroleum; agriculture_food,post_10y,2014,2023,12721,1081,6574,69.1,57.3
+oil_storage_dislocation_2020,event shock,WTI storage/futures dislocation,2020,2020,oil_gas_petroleum; transport_freight,pre_10y,2010,2019,15302,1216,7925,68.0,61.2
+oil_storage_dislocation_2020,event shock,WTI storage/futures dislocation,2020,2020,oil_gas_petroleum; transport_freight,event_pm5y,2015,2025,13593,1071,7136,70.3,58.0
+oil_storage_dislocation_2020,event shock,WTI storage/futures dislocation,2020,2020,oil_gas_petroleum; transport_freight,post_10y,2021,2030,5202,706,2861,72.1,56.1
+freight_derivatives_1985_and_modern_routes,freight derivative availability,Freight and shipping derivatives,1985 and later route products,1985,transport_freight; oil_gas_petroleum,pre_10y,1975,1984,11416,1626,8582,97.0,89.5
+freight_derivatives_1985_and_modern_routes,freight derivative availability,Freight and shipping derivatives,1985 and later route products,1985,transport_freight; oil_gas_petroleum,event_pm5y,1980,1990,15061,1955,11740,98.0,94.5
+freight_derivatives_1985_and_modern_routes,freight derivative availability,Freight and shipping derivatives,1985 and later route products,1985,transport_freight; oil_gas_petroleum,post_10y,1986,1995,12081,1711,9660,97.4,94.1
+silver_market_rules_1980_1981,market rule episode,Silver market rule shock,1979-1981,1980,metals_mining,pre_10y,1970,1979,3346,807,2330,93.0,77.5
+silver_market_rules_1980_1981,market rule episode,Silver market rule shock,1979-1981,1980,metals_mining,event_pm5y,1975,1985,10713,1473,7874,95.4,89.3
+silver_market_rules_1980_1981,market rule episode,Silver market rule shock,1979-1981,1980,metals_mining,post_10y,1981,1990,11610,1711,9137,93.4,94.4
+crude_export_reopening_2015_2016,policy/market access,U.S. crude export reopening,2015-2016,2015,oil_gas_petroleum,pre_10y,2005,2014,11022,1021,6199,65.8,63.8
+crude_export_reopening_2015_2016,policy/market access,U.S. crude export reopening,2015-2016,2015,oil_gas_petroleum,event_pm5y,2010,2020,11117,915,6241,66.7,62.2
+crude_export_reopening_2015_2016,policy/market access,U.S. crude export reopening,2015-2016,2015,oil_gas_petroleum,post_10y,2016,2025,7305,666,4150,69.2,60.8
+gas_globalization_2016,policy/market access,U.S. LNG export opening,2016,2016,oil_gas_petroleum; gas_utility,pre_10y,2006,2015,12439,1015,6346,64.0,62.3
+gas_globalization_2016,policy/market access,U.S. LNG export opening,2016,2016,oil_gas_petroleum; gas_utility,event_pm5y,2011,2021,11891,903,6173,65.9,62.0
+gas_globalization_2016,policy/market access,U.S. LNG export opening,2016,2016,oil_gas_petroleum; gas_utility,post_10y,2017,2026,6949,644,3715,68.2,59.9
+early_exchange_futures_west_1996,power derivative availability,Western power futures: COB and Palo Verde,1996,1996,electric_power_output,pre_10y,1986,1995,4590,555,3657,98.6,96.1
+early_exchange_futures_west_1996,power derivative availability,Western power futures: COB and Palo Verde,1996,1996,electric_power_output,event_pm5y,1991,2001,6732,758,4169,82.6,77.6
+early_exchange_futures_west_1996,power derivative availability,Western power futures: COB and Palo Verde,1996,1996,electric_power_output,post_10y,1997,2006,8958,760,4357,66.4,60.3
+early_exchange_futures_midwest_south_1998,power derivative availability,Eastern Interconnection power futures: Cinergy and Entergy,1998,1998,electric_power_output,pre_10y,1988,1997,4616,539,3613,98.6,95.5
+early_exchange_futures_midwest_south_1998,power derivative availability,Eastern Interconnection power futures: Cinergy and Entergy,1998,1998,electric_power_output,event_pm5y,1993,2003,7822,786,4407,75.6,70.3
+early_exchange_futures_midwest_south_1998,power derivative availability,Eastern Interconnection power futures: Cinergy and Entergy,1998,1998,electric_power_output,post_10y,1999,2008,9678,719,4527,62.6,56.8
+early_exchange_futures_pjm_1999,power derivative availability,PJM exchange-traded electricity futures,1999,1999,electric_power_output,pre_10y,1989,1998,4841,582,3626,97.0,92.8
+early_exchange_futures_pjm_1999,power derivative availability,PJM exchange-traded electricity futures,1999,1999,electric_power_output,event_pm5y,1994,2004,8383,785,4519,72.5,66.9
+early_exchange_futures_pjm_1999,power derivative availability,PJM exchange-traded electricity futures,1999,1999,electric_power_output,post_10y,2000,2009,9768,694,4584,62.3,56.4
+western_hub_expansion_midc_2000,power derivative availability,Western hub expansion: Mid-Columbia,2000,2000,electric_power_output,pre_10y,1990,1999,5283,626,3669,91.3,86.8
+western_hub_expansion_midc_2000,power derivative availability,Western hub expansion: Mid-Columbia,2000,2000,electric_power_output,event_pm5y,1995,2005,8922,786,4624,70.2,64.3
+western_hub_expansion_midc_2000,power derivative availability,Western hub expansion: Mid-Columbia,2000,2000,electric_power_output,post_10y,2001,2010,9851,684,4649,62.3,56.7
+cleared_nodal_power_contracts_2009,power derivative availability,Cleared nodal power contracts,2009,2009,electric_power_output,pre_10y,1999,2008,9678,719,4527,62.6,56.8
+cleared_nodal_power_contracts_2009,power derivative availability,Cleared nodal power contracts,2009,2009,electric_power_output,event_pm5y,2004,2014,10656,699,5002,63.6,57.6
+cleared_nodal_power_contracts_2009,power derivative availability,Cleared nodal power contracts,2009,2009,electric_power_output,post_10y,2010,2019,8949,602,4146,66.7,59.0
+cleared_power_swap_expansion_2005_2009,power derivative availability,Financially settled power swap futures expansion,2005-2009,2009,electric_power_output,pre_10y,1999,2008,9678,719,4527,62.6,56.8
+cleared_power_swap_expansion_2005_2009,power derivative availability,Financially settled power swap futures expansion,2005-2009,2009,electric_power_output,event_pm5y,2004,2014,10656,699,5002,63.6,57.6
+cleared_power_swap_expansion_2005_2009,power derivative availability,Financially settled power swap futures expansion,2005-2009,2009,electric_power_output,post_10y,2010,2019,8949,602,4146,66.7,59.0
+short_dated_power_contracts_2012,power derivative availability,Short-dated daily power contracts,2012,2012,electric_power_output; gas_utility,pre_10y,2002,2011,10245,756,4964,63.0,57.4
+short_dated_power_contracts_2012,power derivative availability,Short-dated daily power contracts,2012,2012,electric_power_output; gas_utility,event_pm5y,2007,2017,10939,766,5399,66.2,60.1
+short_dated_power_contracts_2012,power derivative availability,Short-dated daily power contracts,2012,2012,electric_power_output; gas_utility,post_10y,2013,2022,8814,695,4424,68.7,59.8
+pjm_energy_market_design_1997_1999,power market design,"PJM bid-based, LMP, and market-based energy-market transition",1997-1999,1998,electric_power_output,pre_10y,1988,1997,4616,539,3613,98.6,95.5
+pjm_energy_market_design_1997_1999,power market design,"PJM bid-based, LMP, and market-based energy-market transition",1997-1999,1998,electric_power_output,event_pm5y,1993,2003,7822,786,4407,75.6,70.3
+pjm_energy_market_design_1997_1999,power market design,"PJM bid-based, LMP, and market-based energy-market transition",1997-1999,1998,electric_power_output,post_10y,1999,2008,9678,719,4527,62.6,56.8
+miso_energy_market_2005,power market design,MISO day-ahead and real-time energy markets,2005,2005,electric_power_output,pre_10y,1995,2004,7915,764,4153,70.9,65.1
+miso_energy_market_2005,power market design,MISO day-ahead and real-time energy markets,2005,2005,electric_power_output,event_pm5y,2000,2010,10752,720,5040,62.2,56.5
+miso_energy_market_2005,power market design,MISO day-ahead and real-time energy markets,2005,2005,electric_power_output,post_10y,2006,2015,9552,659,4478,64.4,58.3
+ercot_nodal_market_2010,power market design,ERCOT nodal market,2010,2010,electric_power_output,pre_10y,2000,2009,9768,694,4584,62.3,56.4
+ercot_nodal_market_2010,power market design,ERCOT nodal market,2010,2010,electric_power_output,event_pm5y,2005,2015,10559,689,4949,64.4,58.3
+ercot_nodal_market_2010,power market design,ERCOT nodal market,2010,2010,electric_power_output,post_10y,2011,2020,8695,599,4044,67.2,58.7
+miso_south_integration_2013,regional power market expansion,MISO South integration,2013,2013,electric_power_output,pre_10y,2003,2012,9763,681,4596,62.7,56.9
+miso_south_integration_2013,regional power market expansion,MISO South integration,2013,2013,electric_power_output,event_pm5y,2008,2018,10141,640,4718,65.5,58.4
+miso_south_integration_2013,regional power market expansion,MISO South integration,2013,2013,electric_power_output,post_10y,2014,2023,7990,571,3792,67.0,56.3
+spp_integrated_marketplace_2014,regional power market expansion,SPP Integrated Marketplace,2014,2014,electric_power_output,pre_10y,2004,2013,9689,687,4568,63.1,57.3
+spp_integrated_marketplace_2014,regional power market expansion,SPP Integrated Marketplace,2014,2014,electric_power_output,event_pm5y,2009,2019,9932,633,4606,66.1,58.6
+spp_integrated_marketplace_2014,regional power market expansion,SPP Integrated Marketplace,2014,2014,electric_power_output,post_10y,2015,2024,7678,551,3709,66.5,55.2
+western_eim_launch_2014,regional power market expansion,CAISO / Western Energy Imbalance Market,2014,2014,electric_power_output,pre_10y,2004,2013,9689,687,4568,63.1,57.3
+western_eim_launch_2014,regional power market expansion,CAISO / Western Energy Imbalance Market,2014,2014,electric_power_output,event_pm5y,2009,2019,9932,633,4606,66.1,58.6
+western_eim_launch_2014,regional power market expansion,CAISO / Western Energy Imbalance Market,2014,2014,electric_power_output,post_10y,2015,2024,7678,551,3709,66.5,55.2
+weather_derivatives_1999,weather risk derivative availability,Weather derivatives,1999,1999,electric_power_output; agriculture_food,pre_10y,1989,1998,8259,1068,6321,96.8,91.9
+weather_derivatives_1999,weather risk derivative availability,Weather derivatives,1999,1999,electric_power_output; agriculture_food,event_pm5y,1994,2004,13539,1269,7529,76.0,69.8
+weather_derivatives_1999,weather risk derivative availability,Weather derivatives,1999,1999,electric_power_output; agriculture_food,post_10y,2000,2009,14917,1087,6887,64.7,58.7

@@ -1,0 +1,30 @@
+stype,design,outcome_family,rows,ready_rows,ready_pct,firms_with_ready_rows,firm_years_with_ready_rows,min_year,max_year
+BUSSEG,Segment operating margin,Alpha / segment performance,674184,510137,75.7,27741,304100,1976,2026
+GEOSEG,Segment operating margin,Alpha / segment performance,757202,174729,23.1,12540,101495,1976,2026
+OPSEG,Segment operating margin,Alpha / segment performance,79700,45268,56.8,1193,9504,1996,2026
+STSEG,Segment operating margin,Alpha / segment performance,2331,1175,50.4,53,248,1998,2025
+GEOSEG,Geographic FX exposure,Foreign/currency exposure,757202,423150,55.9,17282,160035,1977,2026
+GEOSEG,Segment granularity,Information production / disclosure,757202,757202,100.0,26300,307470,1976,2026
+BUSSEG,Segment granularity,Information production / disclosure,674184,674184,100.0,29843,352429,1976,2026
+OPSEG,Segment granularity,Information production / disclosure,79700,79700,100.0,1544,13650,1996,2026
+STSEG,Segment granularity,Information production / disclosure,2331,2331,100.0,73,432,1997,2025
+BUSSEG,R&D allocation,Innovation/resources,674184,169419,25.1,16222,136881,1976,2026
+GEOSEG,R&D allocation,Innovation/resources,757202,33343,4.4,4670,26264,1991,2026
+OPSEG,R&D allocation,Innovation/resources,79700,7461,9.4,284,1541,1999,2026
+STSEG,R&D allocation,Innovation/resources,2331,840,36.0,32,151,1998,2025
+BUSSEG,RSZ capital allocation,Internal capital allocation,674184,459511,68.2,28241,294569,1976,2026
+GEOSEG,RSZ capital allocation,Internal capital allocation,757202,92357,12.2,10509,76580,1976,2026
+OPSEG,RSZ capital allocation,Internal capital allocation,79700,29855,37.5,790,5763,1996,2026
+STSEG,RSZ capital allocation,Internal capital allocation,2331,628,26.9,30,132,1999,2025
+BUSSEG,Capex-to-sales allocation,Investment intensity,674184,523036,77.6,28734,310961,1976,2026
+GEOSEG,Capex-to-sales allocation,Investment intensity,757202,113525,15.0,11345,84887,1976,2026
+OPSEG,Capex-to-sales allocation,Investment intensity,79700,50248,63.0,1055,8890,1996,2026
+STSEG,Capex-to-sales allocation,Investment intensity,2331,1425,61.1,48,269,1998,2025
+BUSSEG,Asset allocation,Investment relative to segment assets,674184,502412,74.5,28637,306820,1976,2026
+GEOSEG,Asset allocation,Investment relative to segment assets,757202,105656,14.0,11057,82794,1976,2026
+OPSEG,Asset allocation,Investment relative to segment assets,79700,41306,51.8,968,7603,1996,2026
+STSEG,Asset allocation,Investment relative to segment assets,2331,948,40.7,40,190,1998,2025
+BUSSEG,Employment allocation,Labor/resources,674184,269871,40.0,26084,225527,1976,2026
+GEOSEG,Employment allocation,Labor/resources,757202,114315,15.1,10853,79334,1991,2026
+OPSEG,Employment allocation,Labor/resources,79700,12119,15.2,506,2779,1998,2026
+STSEG,Employment allocation,Labor/resources,2331,117,5.0,13,33,1998,2025

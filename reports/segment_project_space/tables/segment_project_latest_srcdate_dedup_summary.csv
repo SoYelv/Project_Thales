@@ -1,0 +1,5 @@
+stype,raw_rows,latest_source_rows,dropped_older_srcdate_rows,dropped_pct_of_raw
+GEOSEG,1381895,757202,624693,45.2
+BUSSEG,1276288,674184,602104,47.2
+OPSEG,180091,79700,100391,55.7
+STSEG,5011,2331,2680,53.5

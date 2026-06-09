@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-06-09T15:01:15+00:00",
+  "latest_srcdate_rows": 1513417,
+  "candidate_shock_count": 27,
+  "event_window_rows": 81,
+  "unknown_exposure_families": [],
+  "tables_written": [
+    "reports/segment_project_space/tables/segment_project_event_family_mapping.csv",
+    "reports/segment_project_space/tables/segment_project_event_window_readiness.csv"
+  ],
+  "notes": [
+    "Event-window readiness is a mechanical coverage screen around source-backed candidate windows.",
+    "It does not assign treatment/control status."
+  ]
+}

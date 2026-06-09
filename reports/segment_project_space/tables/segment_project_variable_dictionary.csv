@@ -1,0 +1,28 @@
+field,plain_english_description,how_this_project_uses_it,coverage_rule
+gvkey,Firm identifier,"Compustat firm key. Used as the firm id for counts, panels, joins, and clustering.","Identifier coverage is treated as a build prerequisite, not as a feasibility metric."
+datadate,Fiscal period date,Report date for the segment observation. The script extracts calendar year from this date.,A row needs a parsed date to enter year or event-window summaries.
+year,Derived year,Calendar year derived from datadate for time windows and decade summaries.,Not a raw field; missing when datadate cannot be parsed.
+stype,Segment table type,"Distinguishes business, geographic, operating, and state segment records.",Coverage is summarized separately by stype because fields behave very differently across segment types.
+sid,Segment id,"Segment identifier used with gvkey, datadate, stype, and srcdate for provisional row keys.",Not treated as globally unique by itself.
+srcdate,Source update date,Compustat source date. The baseline keeps the latest srcdate per provisional key.,"Used for deduplication, not as an outcome."
+conm,Company name,Readable company label for examples and inspection.,Not used to define coverage.
+tic,Ticker,Readable ticker where available.,Not used to define coverage.
+snms,Segment name,"Reported segment name. Useful for screening geography, electricity, oil/gas, corporate, or unallocated labels.",Name coverage means snms is nonblank; keyword coverage is only a discovery aid.
+sic,Firm SIC,Firm-level industry code. Used as fallback when segment SIC is absent.,Code coverage means the field is nonmissing; final exposure definitions can be externally validated.
+"sics1, sics2",Segment SIC codes,Segment-level industry codes. Used before firm SIC for exposure screens.,Coverage is nonmissingness in either segment code field.
+"naics, naicss1, naicss2",Firm and segment NAICS codes,Alternative industry codes retained for future exposure checks.,"Currently profiled, but SIC is the main exposure map in this script."
+"gind, gsubind",GICS fields,Industry classification fields retained for optional robustness.,"Coverage is reported, but these fields are not the primary exposure definitions."
+curcds,Segment currency code,Currency code associated with segment data where reported.,"Potential control or audit field, not a primary coverage denominator."
+isosrc,Source country/currency marker,In GEOSEG rows this often behaves like a source country or currency marker.,Currency readiness requires isosrc to be nonblank; non-US currency excludes USD/US.
+geotp,Geographic type,Geographic segment type/category when reported.,Profiled as a possible geography-quality field.
+sales,Segment sales,"Main scale denominator for margins, shares, and segment weights.",Sales coverage is nonmissing; margin calculations also require sales not equal to zero.
+ops,Segment operating profit,Used with sales to form operating margin and alpha-style performance measures.,Margin-ready rows require sales and ops both present and sales nonzero.
+capxs,Segment capital expenditures,Core investment outcome for capital-allocation tests.,Allocation-ready rows require capxs plus the relevant denominator and performance fields.
+ias,Segment identifiable assets,Main asset denominator for capex/assets and RSZ-style investment scaling.,"RSZ allocation readiness requires sales, ops, capxs, and ias."
+ppents,"Segment property, plant, and equipment",Possible tangible-capital resource measure.,Profiled as an optional outcome/control field.
+emps,Segment employees,Possible labor/resource allocation outcome.,Employment-ready rows require sales and emps.
+rds,Segment R&D,Possible innovation/resource allocation outcome.,R&D-ready rows require sales and rds.
+ops / sales,Derived operating margin,Segment operating performance used for alpha and opportunity measures.,Defined only when sales and ops are present and sales is not zero.
+capxs / ias,Derived capex/assets,Investment intensity relative to segment assets.,Defined only when capxs and ias are present and ias is not zero.
+segment count,Derived disclosure granularity,Number of segment rows or operating segments within a firm-year.,Ready when the segment rows are present after deduplication.
+HHI,Derived concentration,Sales concentration across operating segments within a firm-year.,Requires positive operating-segment sales within the firm-year.

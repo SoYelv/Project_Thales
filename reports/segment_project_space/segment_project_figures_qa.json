@@ -1,0 +1,13 @@
+{
+  "generated_at_utc": "2026-06-09T16:10:50+00:00",
+  "figures_written": [
+    "reports/segment_project_space/figures/outcome_readiness_by_stype.png",
+    "reports/segment_project_space/figures/industry_family_sample.png",
+    "reports/segment_project_space/figures/geographic_feasibility_by_decade.png",
+    "reports/segment_project_space/figures/candidate_shock_windows_by_shock.png"
+  ],
+  "figure_count": 4,
+  "notes": [
+    "Figures are generated from CSV artifacts under reports/segment_project_space/tables."
+  ]
+}

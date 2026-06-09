@@ -1,0 +1,2 @@
+source_path,source_sha256,generated_at_utc,raw_rows,latest_source_rows,dedup_key,dedup_rule
+data/raw/segment_data.csv,fe409fa34ee2c108587716d525814509a24ac9dcbdcf87fd47c3e917db82e5d4,2026-06-09T14:58:56+00:00,2843285,1513417,gvkey + datadate + stype + sid,sort by srcdate_dt within dedup_key and keep last row

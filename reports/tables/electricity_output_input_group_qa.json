@@ -1,0 +1,34 @@
+{
+  "counts": {
+    "all_firms_in_segment_panel": 29477,
+    "input_industrial_high_firms": 1598,
+    "input_mfg_high_firms": 879,
+    "input_mfg_very_high_firms": 212,
+    "output_producer_firms": 780
+  },
+  "definitions": {
+    "eim_assignment": "CAISO EIM staggered entry by state, 2015-2018.",
+    "event_assignment": "Strict 1996/1998/1999 HQ-state hub mapping from firm_event.parquet.",
+    "input_industrial_high": "Non-output firm whose top electricity-intensity segment SIC is 1000-3999 and whose max firm-year electricity input intensity is at least 3%.",
+    "input_manufacturing_high": "Non-output firm whose top electricity-intensity segment SIC is 2000-3999 and whose max firm-year electricity input intensity is at least 3%.",
+    "input_manufacturing_very_high": "Same as input_manufacturing_high but max intensity is at least 6%.",
+    "modern_regional_assignment": "PJM RPM 2007, ERCOT nodal 2010, MISO South 2013, and SPP Integrated Marketplace 2014 HQ-state proxies.",
+    "output_producer": "Firm ever has an electric-power operating segment in seg_invest2.elec."
+  },
+  "generated_at_utc": "2026-06-08T14:25:20.502932+00:00",
+  "inputs": {
+    "company": "reports/panel/company.parquet",
+    "firm_event": "reports/panel/firm_event.parquet",
+    "seg_invest2": "reports/panel/seg_invest2.parquet"
+  },
+  "outputs": {
+    "group_counts": "reports/tables/electricity_output_input_group_counts.csv",
+    "input_industrial_firm_event_csv": "reports/tables/electricity_input_industrial_firm_event.csv",
+    "input_mfg_firm_event_csv": "reports/tables/electricity_input_mfg_firm_event.csv",
+    "input_mfg_industry_counts": "reports/tables/electricity_input_mfg_industry_counts.csv",
+    "mechanism_firm_event": "reports/panel/electricity_mechanism_firm_event.parquet",
+    "modern_group_counts": "reports/tables/electricity_output_input_modern_group_counts.csv",
+    "modern_shock_definitions": "reports/tables/electricity_modern_shock_definitions.csv",
+    "output_firm_event_csv": "reports/tables/electricity_output_firm_event.csv"
+  }
+}

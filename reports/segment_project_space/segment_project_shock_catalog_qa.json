@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-06-09T15:01:15+00:00",
+  "candidate_shock_count": 27,
+  "shock_type_count": 11,
+  "source_count": 41,
+  "tables_written": [
+    "reports/segment_project_space/tables/segment_project_candidate_shock_catalog.csv",
+    "reports/segment_project_space/tables/segment_project_candidate_shock_sources.csv",
+    "reports/segment_project_space/tables/segment_project_candidate_shock_windows.csv",
+    "reports/segment_project_space/tables/segment_project_candidate_shock_type_summary.csv"
+  ],
+  "notes": [
+    "Candidate shock rows are source-backed catalog entries, not treatment/control rules.",
+    "Derivative-listing windows are separated from ISO/RTO market-design windows.",
+    "Exposure-family entries are mechanical segment-data screens used by the event-readiness script."
+  ]
+}

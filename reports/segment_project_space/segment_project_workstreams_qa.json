@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-06-09T15:01:49+00:00",
+  "workstream_count": 10,
+  "existing_result_tables_present": 5,
+  "existing_result_tables_missing": 0,
+  "tables_written": [
+    "reports/segment_project_space/tables/segment_project_workstream_inventory.csv",
+    "reports/segment_project_space/tables/segment_project_existing_result_manifest.csv"
+  ],
+  "notes": [
+    "Workstream rows are descriptive coauthor-update entries.",
+    "Rows do not choose a research direction or define treatment/control."
+  ]
+}

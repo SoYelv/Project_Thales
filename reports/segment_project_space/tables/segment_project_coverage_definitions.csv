@@ -1,0 +1,14 @@
+term,definition,how_to_read_it
+raw rows,All rows read from data/raw/segment_data.csv before deduplication.,This is the source inventory count.
+latest-source rows,"Rows after keeping the latest srcdate for each gvkey, datadate, stype, sid key.",This is the default denominator for the report series.
+dropped older srcdate rows,"Rows removed because a newer source snapshot exists for the same gvkey, datadate, stype, sid key.",This removes duplicate source snapshots; it is not a research-sample exclusion.
+rows,Segment-level observations in the displayed group after latest-source deduplication.,Used to show raw table scale.
+firms,Distinct gvkey values with at least one row in the displayed group.,Used to show the number of companies represented.
+firm-years,Distinct gvkey and datadate combinations with at least one row in the displayed group.,Used to show panel support for regressions.
+nonmissing pct,Share of rows where a single field is not missing.,Used for variable-level coverage.
+margin-ready pct,Share of rows with sales and ops present and sales not equal to zero.,Used for operating-margin and alpha-style analyses.
+RSZ allocation-ready pct,"Share of rows with sales, ops, capxs, and ias all present.",Used for segment capital-allocation feasibility.
+employment-ready rows,Rows with sales and emps present.,Used for segment labor/resource feasibility.
+R&D-ready rows,Rows with sales and rds present.,Used for segment innovation/resource feasibility.
+geographic FX exposure readiness,GEOSEG rows with sales and a nonblank segment name.,"A screen for possible geography/currency exposure, not a complete causal design."
+event-window readiness,Coverage within mechanical pre/event/post windows around candidate shocks.,A data support screen only; it does not prove identification.

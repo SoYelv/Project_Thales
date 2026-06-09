@@ -1,0 +1,13 @@
+exposure_field,current_rule,how_to_read_it
+seg_sic,"first nonmissing of sics1, sics2, then firm sic",Segment SIC is used first. Firm SIC is only a fallback when segment SIC is missing.
+electric_power_output,"SIC 4910-4939 or 4991; or segment name contains ELECTRIC, POWER, UTILITY",Captures electric power or utility segment exposure for coverage exploration.
+gas_utility,SIC 4920-4925; or segment name contains NATURAL GAS or GAS UTILITY,Captures gas utility segment exposure.
+oil_gas_petroleum,"SIC 1311, 1380-1389, 2911, 4610-4619; or segment name contains OIL, GAS, PETROLEUM, REFIN","Captures oil, gas, petroleum, refining, and pipeline-related segment exposure."
+broader_energy,electric_power_output or gas_utility or oil_gas_petroleum or SIC 4900-4999,Broad energy/utility screen used to summarize overall energy exposure.
+metals_mining,SIC 1000-1499 or 3310-3399,Mining plus primary metal manufacturing screen.
+agriculture_food,SIC 0100-0999 or 2000-2099,Agriculture and food manufacturing screen.
+transport_freight,SIC 4000-4799,Transportation and freight industry screen.
+airlines_fuel_sensitive,"SIC 4512, 4513, 4581; or segment name contains AIRLINE, AVIATION, AIR",Air transport screen used as a possible fuel-sensitive subgroup.
+chemicals,SIC 2800-2899,Chemical manufacturing screen.
+paper_pulp,SIC 2600-2699; or segment name contains PAPER or PULP,Paper and pulp screen.
+cement_minerals,"SIC 3200-3299; or segment name contains CEMENT, LIME, MINERAL, GLASS","Stone, clay, glass, cement, and minerals screen."

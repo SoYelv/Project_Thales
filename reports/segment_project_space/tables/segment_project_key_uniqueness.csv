@@ -1,0 +1,4 @@
+candidate_key,key_columns,unique_key_count,duplicate_key_count,duplicate_rows,max_rows_per_key,duplicate_row_pct
+gvkey_datadate_stype_sid,"gvkey, datadate, stype, sid",1513417,740081,2069949,3,72.8
+plus_segment_name,"gvkey, datadate, stype, sid, snms",1576707,728175,1994753,3,70.2
+plus_srcdate,"gvkey, datadate, stype, sid, srcdate",2843285,0,0,1,0.0

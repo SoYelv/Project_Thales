@@ -1,0 +1,245 @@
+{
+  "drilldown_candidates": [
+    {
+      "n_p05": 6,
+      "n_specs": 6,
+      "opp": "l_margin",
+      "shock": "FERC636_1992",
+      "treatment": "pre_energy_any"
+    },
+    {
+      "n_p05": 4,
+      "n_specs": 6,
+      "opp": "l_margin",
+      "shock": "FERC636_1992",
+      "treatment": "pre_gas_any"
+    },
+    {
+      "n_p05": 4,
+      "n_specs": 6,
+      "opp": "l_margin",
+      "shock": "GAS_SPIKE_2001",
+      "treatment": "energy_segment"
+    },
+    {
+      "n_p05": 4,
+      "n_specs": 6,
+      "opp": "l_margin",
+      "shock": "SO2_ALLOWANCE_1995",
+      "treatment": "pre_electric_any"
+    },
+    {
+      "n_p05": 4,
+      "n_specs": 6,
+      "opp": "sgrow",
+      "shock": "NATGAS_1990",
+      "treatment": "pre_energy_any"
+    }
+  ],
+  "drilldown_outputs": {
+    "drilldown_summary": "trials/energy_shocks/energy_shock_candidate_drilldown_summary.csv",
+    "event_study": "trials/energy_shocks/energy_shock_candidate_event_study.csv",
+    "leave_one_year": "trials/energy_shocks/energy_shock_candidate_leave_one_year.csv",
+    "placebos": "trials/energy_shocks/energy_shock_candidate_placebos.csv"
+  },
+  "drilldown_pass_count": 0,
+  "exposure_counts_segment_years": {
+    "seg_carbon": 123225,
+    "seg_energy_trial": 50374,
+    "seg_gas": 7890,
+    "seg_oilgas": 26543
+  },
+  "firm_did_drilldown_outputs": {
+    "baseline": "trials/energy_shocks/energy_shock_firm_did_baseline_candidates.csv",
+    "drilldown_summary": "trials/energy_shocks/energy_shock_firm_did_drilldown_summary.csv",
+    "event_study": "trials/energy_shocks/energy_shock_firm_did_event_study.csv",
+    "leave_one_year": "trials/energy_shocks/energy_shock_firm_did_leave_one_year.csv",
+    "placebos": "trials/energy_shocks/energy_shock_firm_did_placebos.csv",
+    "selected_candidates": "trials/energy_shocks/energy_shock_firm_did_selected_candidates.csv"
+  },
+  "firm_did_drilldown_pass_count": 0,
+  "firm_outcomes": [
+    "n_op_seg",
+    "log_nseg",
+    "hhi",
+    "nonop_sales_share",
+    "multi_seg"
+  ],
+  "firmyear_firms": 29843,
+  "firmyear_rows": 352429,
+  "firmyear_year_max": 2026,
+  "firmyear_year_min": 1976,
+  "inputs": {
+    "company": "reports/panel/company.parquet",
+    "regdata": "reports/panel/regdata.parquet",
+    "seg_invest2": "reports/panel/seg_invest2.parquet"
+  },
+  "latest_load_counts": {
+    "exposure_counts_segment_years": {
+      "seg_carbon": 123225,
+      "seg_energy_trial": 50374,
+      "seg_gas": 7890,
+      "seg_oilgas": 26543
+    },
+    "firmyear_firms": 29843,
+    "firmyear_rows": 352429,
+    "firmyear_year_max": 2026,
+    "firmyear_year_min": 1976,
+    "inputs": {
+      "company": "reports/panel/company.parquet",
+      "regdata": "reports/panel/regdata.parquet",
+      "seg_invest2": "reports/panel/seg_invest2.parquet"
+    },
+    "segment_firms": 29477,
+    "segment_rows": 590862,
+    "segment_year_max": 2026,
+    "segment_year_min": 1976
+  },
+  "opp_cols": [
+    "l_margin",
+    "sgrow"
+  ],
+  "outputs": {
+    "all_specs": "trials/energy_shocks/energy_shock_all_specs.csv",
+    "qa_json": "trials/energy_shocks/energy_shock_trial_qa.json",
+    "robustness_summary": "trials/energy_shocks/energy_shock_robustness_summary.csv",
+    "summary_md": "trials/energy_shocks/energy_shock_trial_summary.md"
+  },
+  "robust_candidates": 5,
+  "samples": [
+    "all_multiseg",
+    "pre_multiseg"
+  ],
+  "script": "trials/energy_shocks/run_energy_shock_trials.py",
+  "segment_firms": 29477,
+  "segment_rows": 590862,
+  "segment_year_max": 2026,
+  "segment_year_min": 1976,
+  "shock_definitions": [
+    {
+      "base_span": 5,
+      "design": "national",
+      "family": "oil",
+      "name": "WTI_1983",
+      "note": "NYMEX WTI crude oil futures launch; treated exposure is oil/gas SIC proxy.",
+      "post_start": null,
+      "states": [],
+      "year": 1983
+    },
+    {
+      "base_span": 5,
+      "design": "national",
+      "family": "oil",
+      "name": "OIL_COLLAPSE_1986",
+      "note": "Exploratory oil price-collapse shock; not a derivative-availability event.",
+      "post_start": null,
+      "states": [],
+      "year": 1986
+    },
+    {
+      "base_span": 5,
+      "design": "national",
+      "family": "gas",
+      "name": "NATGAS_1990",
+      "note": "NYMEX natural gas futures launch; treated exposure is gas/oilgas/energy SIC proxy.",
+      "post_start": null,
+      "states": [],
+      "year": 1990
+    },
+    {
+      "base_span": 5,
+      "design": "national",
+      "family": "gas",
+      "name": "FERC636_1992",
+      "note": "Gas open-access/unbundling restructuring check; not a pure derivative launch.",
+      "post_start": null,
+      "states": [],
+      "year": 1992
+    },
+    {
+      "base_span": 5,
+      "design": "national",
+      "family": "carbon",
+      "name": "SO2_ALLOWANCE_1995",
+      "note": "Exploratory emissions-market analog: Acid Rain Program SO2 allowance compliance start, not CO2 carbon.",
+      "post_start": null,
+      "states": [],
+      "year": 1995
+    },
+    {
+      "base_span": 5,
+      "design": "national",
+      "family": "gas",
+      "name": "GAS_SPIKE_2001",
+      "note": "Exploratory natural-gas price-spike shock; not a derivative-availability event.",
+      "post_start": null,
+      "states": [],
+      "year": 2001
+    },
+    {
+      "base_span": 5,
+      "design": "national",
+      "family": "carbon",
+      "name": "EU_ETS_2005",
+      "note": "Exploratory high-carbon period proxy for EU ETS start; current data lacks facility/allowance exposure.",
+      "post_start": null,
+      "states": [],
+      "year": 2005
+    },
+    {
+      "base_span": 5,
+      "design": "regional",
+      "family": "carbon",
+      "name": "RGGI_2009",
+      "note": "RGGI compliance-period shock using HQ-state membership and high-carbon SIC exposure.",
+      "post_start": null,
+      "states": [
+        "CT",
+        "DE",
+        "MA",
+        "MD",
+        "ME",
+        "NH",
+        "NJ",
+        "NY",
+        "RI",
+        "VT"
+      ],
+      "year": 2009
+    },
+    {
+      "base_span": 5,
+      "design": "regional",
+      "family": "carbon",
+      "name": "CA_CARBON_2013",
+      "note": "California cap-and-trade compliance-period shock using HQ-state and high-carbon SIC exposure.",
+      "post_start": null,
+      "states": [
+        "CA"
+      ],
+      "year": 2013
+    },
+    {
+      "base_span": 5,
+      "design": "stacked_regional",
+      "family": "carbon",
+      "name": "CARBON_STACK_2009_2013",
+      "note": "Stacked RGGI 2009 and California 2013 regional carbon trial.",
+      "post_start": null,
+      "states": [],
+      "year": 2009
+    }
+  ],
+  "span_grid": [
+    3,
+    5,
+    7
+  ],
+  "successful_specs": 1203,
+  "total_specs": 1278,
+  "trend_adjusted_outputs": {
+    "specs": "trials/energy_shocks/energy_shock_trend_adjusted_specs.csv",
+    "summary": "trials/energy_shocks/energy_shock_trend_adjusted_summary.csv"
+  },
+  "trend_adjusted_pass_count": 3
+}
